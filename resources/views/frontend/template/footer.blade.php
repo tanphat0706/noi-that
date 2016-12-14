@@ -13,24 +13,24 @@
                             <h5 class="section-nav-title">Products</h5>
                             <ul class="product_list_widget">
                                 <li>
-                                    <a href="http://sites.layerswp.com/crafthouse/product/leather-stool/" title="Leather Stool">
-                                        <img width="220" height="220" src="http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/LeatherColl2-9515-220x220.jpg" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="LeatherColl2-9515" srcset="http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/LeatherColl2-9515-220x220.jpg 220w, http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/LeatherColl2-9515-150x150.jpg 150w, http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/LeatherColl2-9515-480x480.jpg 480w, http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/LeatherColl2-9515-130x130.jpg 130w"
+                                    <a href="#crafthouse/product/leather-stool/" title="Leather Stool">
+                                        <img width="220" height="220" src="images/LeatherColl2-9515-220x220.jpg" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="LeatherColl2-9515" srcset="images/LeatherColl2-9515-220x220.jpg 220w, images/LeatherColl2-9515-150x150.jpg 150w, images/LeatherColl2-9515-480x480.jpg 480w, images/LeatherColl2-9515-130x130.jpg 130w"
                                             sizes="(max-width: 220px) 100vw, 220px"> <span class="product-title">Leather Stool</span>
                                     </a>
                                     <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>6,000.00</span>
                                 </li>
 
                                 <li>
-                                    <a href="http://sites.layerswp.com/crafthouse/product/leather-bench/" title="Leather Bench">
-                                        <img width="220" height="220" src="http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/LeatherColl2-9588-220x220.jpg" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="LeatherColl2-9588" srcset="http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/LeatherColl2-9588-220x220.jpg 220w, http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/LeatherColl2-9588-150x150.jpg 150w, http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/LeatherColl2-9588-480x480.jpg 480w, http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/LeatherColl2-9588-130x130.jpg 130w"
+                                    <a href="#crafthouse/product/leather-bench/" title="Leather Bench">
+                                        <img width="220" height="220" src="images/LeatherColl2-9588-220x220.jpg" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="LeatherColl2-9588" srcset="images/LeatherColl2-9588-220x220.jpg 220w, images/LeatherColl2-9588-150x150.jpg 150w, images/LeatherColl2-9588-480x480.jpg 480w, images/LeatherColl2-9588-130x130.jpg 130w"
                                             sizes="(max-width: 220px) 100vw, 220px"> <span class="product-title">Leather Bench</span>
                                     </a>
                                     <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>6,000.00</span>
                                 </li>
 
                                 <li>
-                                    <a href="http://sites.layerswp.com/crafthouse/product/corner-table/" title="Corner Table">
-                                        <img width="220" height="220" src="http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/CornerColl2-9309-220x220.jpg" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="CornerColl2-9309" srcset="http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/CornerColl2-9309-220x220.jpg 220w, http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/CornerColl2-9309-150x150.jpg 150w, http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/CornerColl2-9309-480x480.jpg 480w, http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/CornerColl2-9309-130x130.jpg 130w"
+                                    <a href="#crafthouse/product/corner-table/" title="Corner Table">
+                                        <img width="220" height="220" src="images/CornerColl2-9309-220x220.jpg" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="CornerColl2-9309" srcset="images/CornerColl2-9309-220x220.jpg 220w, images/CornerColl2-9309-150x150.jpg 150w, images/CornerColl2-9309-480x480.jpg 480w, images/CornerColl2-9309-130x130.jpg 130w"
                                             sizes="(max-width: 220px) 100vw, 220px"> <span class="product-title">Corner Table</span>
                                     </a>
                                     <del><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>6,000.00</span></del> <ins><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>5,800.00</span></ins></li>
@@ -42,24 +42,24 @@
                             <h5 class="section-nav-title">Products on Sale</h5>
                             <ul class="product_list_widget">
                                 <li>
-                                    <a href="http://sites.layerswp.com/crafthouse/product/leather-stool/" title="Leather Stool">
-                                        <img width="220" height="220" src="http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/LeatherColl2-9515-220x220.jpg" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="LeatherColl2-9515" srcset="http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/LeatherColl2-9515-220x220.jpg 220w, http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/LeatherColl2-9515-150x150.jpg 150w, http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/LeatherColl2-9515-480x480.jpg 480w, http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/LeatherColl2-9515-130x130.jpg 130w"
+                                    <a href="#crafthouse/product/leather-stool/" title="Leather Stool">
+                                        <img width="220" height="220" src="images/LeatherColl2-9515-220x220.jpg" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="LeatherColl2-9515" srcset="images/LeatherColl2-9515-220x220.jpg 220w, images/LeatherColl2-9515-150x150.jpg 150w, images/LeatherColl2-9515-480x480.jpg 480w, images/LeatherColl2-9515-130x130.jpg 130w"
                                             sizes="(max-width: 220px) 100vw, 220px"> <span class="product-title">Leather Stool</span>
                                     </a>
                                     <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>6,000.00</span>
                                 </li>
 
                                 <li>
-                                    <a href="http://sites.layerswp.com/crafthouse/product/leather-bench/" title="Leather Bench">
-                                        <img width="220" height="220" src="http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/LeatherColl2-9588-220x220.jpg" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="LeatherColl2-9588" srcset="http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/LeatherColl2-9588-220x220.jpg 220w, http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/LeatherColl2-9588-150x150.jpg 150w, http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/LeatherColl2-9588-480x480.jpg 480w, http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/LeatherColl2-9588-130x130.jpg 130w"
+                                    <a href="#crafthouse/product/leather-bench/" title="Leather Bench">
+                                        <img width="220" height="220" src="images/LeatherColl2-9588-220x220.jpg" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="LeatherColl2-9588" srcset="images/LeatherColl2-9588-220x220.jpg 220w, images/LeatherColl2-9588-150x150.jpg 150w, images/LeatherColl2-9588-480x480.jpg 480w, images/LeatherColl2-9588-130x130.jpg 130w"
                                             sizes="(max-width: 220px) 100vw, 220px"> <span class="product-title">Leather Bench</span>
                                     </a>
                                     <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>6,000.00</span>
                                 </li>
 
                                 <li>
-                                    <a href="http://sites.layerswp.com/crafthouse/product/corner-table/" title="Corner Table">
-                                        <img width="220" height="220" src="http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/CornerColl2-9309-220x220.jpg" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="CornerColl2-9309" srcset="http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/CornerColl2-9309-220x220.jpg 220w, http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/CornerColl2-9309-150x150.jpg 150w, http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/CornerColl2-9309-480x480.jpg 480w, http://sites.layerswp.com/crafthouse/wp-content/uploads/sites/19/2016/01/CornerColl2-9309-130x130.jpg 130w"
+                                    <a href="#crafthouse/product/corner-table/" title="Corner Table">
+                                        <img width="220" height="220" src="images/CornerColl2-9309-220x220.jpg" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="CornerColl2-9309" srcset="images/CornerColl2-9309-220x220.jpg 220w, images/CornerColl2-9309-150x150.jpg 150w, images/CornerColl2-9309-480x480.jpg 480w, images/CornerColl2-9309-130x130.jpg 130w"
                                             sizes="(max-width: 220px) 100vw, 220px"> <span class="product-title">Corner Table</span>
                                     </a>
                                     <del><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>6,000.00</span></del> <ins><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>5,800.00</span></ins></li>
