@@ -21,6 +21,8 @@
     {!! Html::style('plugins/datatables/extensions/ColVis/css/dataTables.colVis.min.css') !!}
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
     {!! Html::style('css/style.css') !!}
+    <!-- iCheck -->
+    {!! Html::style('plugins/iCheck/square/blue.css') !!}
     <!-- jQuery 2.2.3 -->
     {!! Html::script('js/jquery-2.2.3.min.js') !!}
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -105,8 +107,10 @@
 {!! Html::script('js/app.min.js') !!}
 <!-- AdminLTE for demo purposes -->
 {!! Html::script('js/demo.js') !!}
+<!--{!! Html::script('plugins/select2/select2.full.min.js') !!}-->
 <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 {!! Html::script('plugins/fancybox/jquery.mousewheel-3.0.6.pack.js') !!}
+{!! Html::script('plugins/iCheck/icheck.min.js') !!}
 <!-- page script -->
 {!! Html::script('js/main.js') !!}
 {!! Html::script('js/easyResponsiveTabs.js') !!}
@@ -125,7 +129,13 @@
 <script src="https://js.pusher.com/3.0/pusher.min.js"></script>
 <script type="text/javascript">
     var _token = '{!! csrf_token() !!}';
-
+    $(function () {
+        $('input[type="checkbox"].icheck').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' // optional
+        });
+    });
     @yield('js')
     @yield('datatable-js')
 </script>

@@ -21,7 +21,15 @@ Route::match([
     'as' => 'frontend',
     'uses' => 'HomeController@index'
 ]);
-Route::auth();
+Route::get('/login', [
+    'as' => 'login',
+    'uses' => 'Auth\AuthController@getLogin'
+]);
+Route::post('/login', [
+    'as' => 'login',
+    'uses' => 'Auth\AuthController@postLogin'
+]);
+// Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
