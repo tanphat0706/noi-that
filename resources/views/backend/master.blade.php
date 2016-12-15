@@ -6,6 +6,7 @@
     <title>@yield('title', '') | {{ trans('system.app_name') }}</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!-- Bootstrap 3.3.6 -->
     {!! Html::style('css/bootstrap/css/bootstrap.min.css') !!}
     <!-- Font Awesome -->
@@ -140,5 +141,12 @@
     @yield('datatable-js')
 </script>
 <!-- Modal -->
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
 </body>
 </html>

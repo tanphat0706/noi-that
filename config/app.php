@@ -159,6 +159,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         // Datatables
         yajra\Datatables\DatatablesServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
     ],
 
     /*
@@ -208,6 +209,7 @@ return [
         'Html'       => Collective\Html\HtmlFacade::class,
         'Datatables' => yajra\Datatables\Datatables::class,
         'Input' => Illuminate\Support\Facades\Input::class,
+        'Image'      => Intervention\Image\Facades\Image::class,
 
     ],
 

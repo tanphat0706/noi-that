@@ -12,7 +12,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
+        'group_id'
     ];
 
     /**
@@ -21,6 +24,22 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
+
+    // Check current user has a role
+    public function hasRole($role)
+    {
+        $groupRole = false;
+        $user = User::find($this->id);
+        if ($user) {
+            $userRole = UserRole::where('code', $role)->first();
+            if ($userRole) {
+                $groupRole = GroupRole::where('group_id', $user->group_id)->where('role_id', $userRole->id)->first();
+            }
+        }
+
+        return $groupRole;
+    }
 }
