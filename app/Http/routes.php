@@ -14,7 +14,29 @@
 Route::get('/', function () {
     return view('frontend.home');
 });
-
+Route::match([
+    'get',
+    'post'
+], '/', [
+    'as' => 'frontend',
+    'uses' => 'HomeController@index'
+]);
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::group([
+    'middleware' => ['web'],
+    'prefix' => 'admin'
+], function () {
+    Route::auth();
+
+    Route::group([
+        'middleware' => ['auth']
+    ], function () {
+        Route::get('/', [
+            'as' => 'admin',
+            'uses' => 'HomeController@admin'
+        ]);
+    });
+});
