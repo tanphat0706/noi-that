@@ -22,26 +22,20 @@
                 <div class="inline-left-nav">
                     <nav class="nav nav-horizontal">
                         <ul id="menu-main-menu-1" class="menu">
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item current-menu-ancestor current-menu-parent menu-item-has-children menu-item-74"><a href="/crafthouse">Home</a>
+                            <li><a href="/crafthouse">Home</a></li>
+                            <li class="menu-item-has-children"><a href="#crafthouse/shop/">Products</a>
                                 <ul class="sub-menu">
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-250 current_page_item menu-item-285"><a href="#crafthouse/">Home</a></li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-278"><a href="#crafthouse/home-2/">Home 2</a></li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-279"><a href="#crafthouse/home-3/">Home 3</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-280"><a href="#crafthouse/shop/">Shop</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-284"><a href="#crafthouse/shop/">Products</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-357"><a href="#crafthouse/product/leather-stool/">Simple</a></li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-355"><a href="#crafthouse/product/corner-side-table/">Variable</a></li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-356"><a href="#crafthouse/product/brick-bench/">On Sale</a></li>
-                                            <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-358"><a href="#crafthouse/product/ring-cutting-board/">Out of Stock</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-281"><a href="#crafthouse/cart/">Cart</a></li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-282"><a href="#crafthouse/checkout/">Checkout</a></li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-283"><a href="#crafthouse/my-account/">My Account</a></li>
+                                    {{--<li class="menu-item-has-children"><a href="#crafthouse/shop/">Products</a>--}}
+                                        {{--<ul class="sub-menu">--}}
+                                            {{--<li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-357"><a href="#crafthouse/product/leather-stool/">Simple</a></li>--}}
+                                            {{--<li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-355"><a href="#crafthouse/product/corner-side-table/">Variable</a></li>--}}
+                                            {{--<li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-356"><a href="#crafthouse/product/brick-bench/">On Sale</a></li>--}}
+                                            {{--<li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-358"><a href="#crafthouse/product/ring-cutting-board/">Out of Stock</a></li>--}}
+                                        {{--</ul>--}}
+                                    {{--</li>--}}
+                                    @foreach($site_menus as $menu)
+                                        <li><a href="#crafthouse/cart/">{{$menu->name}}</a></li>
+                                    @endforeach
                                 </ul>
                             </li>
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-286"><a href="#crafthouse/about/">About</a></li>
@@ -50,8 +44,7 @@
                 </div>
                 <div class="inline-site-logo">
                     <div class="logo">
-                        <a href="#crafthouse/" class="custom-logo-link" rel="home" itemprop="url"><img width="151" height="138" src="images/site-logo.png" class="custom-logo" alt="site-logo" itemprop="logo" srcset="images/site-logo.png 151w, images/site-logo-150x138.png 150w"
-                                sizes="(max-width: 151px) 100vw, 151px"></a>
+                        <a href="#crafthouse/" class="custom-logo-link" rel="home" itemprop="url"><img width="151" height="138" src="images/site-logo.png" class="custom-logo" alt="site-logo" itemprop="logo" sizes="(max-width: 151px) 100vw, 151px"></a>
                         <div class="site-description">
                             <h3 class="sitename sitetitle"><a href="#crafthouse">{{trans('system.app_name')}}</a></h3>
                             <p class="tagline">{{trans('system.slogan')}}</p>

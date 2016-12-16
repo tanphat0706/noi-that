@@ -18,13 +18,13 @@
                         {!!Form::text('name', null , array('class' => 'form-control formwidth', 'autocomplete' => 'off')) !!}
                     </div>
                     <div class="form-group col-md-6 col-xs-12" style="float: left;">
-                        <label for="name">{{ trans('category.image_url') }}</label><span class="required">*</span>
+                        <label for="name">{{ trans('category.image') }}</label><span class="required">*</span>
                         <div>
                             <img class="img-responsive" style="width:100%;height: 200px"
-                                 src="{{asset('images/category_img/'.$cate->image_url)}}" id="output">
+                                 src="{{asset('images/categories/'.$cate->image)}}" id="output">
                         </div>
                         {{--{!! Form::file('image_url',null,['class'=>'form-control']) !!}--}}
-                        <input class="form-control" type="file" accept="image/*" name="image_url"
+                        <input class="form-control" type="file" accept="image/*" name="image"
                                onchange="loadFile(event)">
                         <script>
                             var loadFile = function (event) {
@@ -33,44 +33,13 @@
                             };
                         </script>
                     </div>
-                    <div class="form-group col-md-6 col-xs-12" style="float: left;">
-                        <label for="name">{{ trans('category.thumbs_img') }}</label><span class="required">*</span>
-                        <div>
-                            <img class="img-responsive" style="width:100%; height: 200px"
-                                 src="{{asset('images/category_img/thumbnail/'.$cate->thumbs_img)}}" id="output2">
-                        </div>
-                        {{--{!! Form::file('image_url',null,['class'=>'form-control']) !!}--}}
-                        <input class="form-control" type="file" accept="image/*" name="thumbs_img"
-                               onchange="loadFile2(event)">
-                        <script>
-                            var loadFile2 = function (event) {
-                                var output2 = document.getElementById('output2');
-                                output2.src = URL.createObjectURL(event.target.files[0]);
-                            };
-                        </script>
-                    </div>
-                    <div class="form-group">
-                        {!! Form::label('status', trans('user.status'), ['class' => 'control-label']) !!}
-                        {!! Form::select('status', $listStatus, null, ['class' => 'form-control']) !!}
-                    </div>
-                    <div class="form-group">
-                        <label for="name">{{ trans('category.order_number') }}</label>
-                        <span class="required">*</span>
-                        {!!Form::text('order_number', null,array('class' => 'form-control formwidth', 'autocomplete' => 'off')) !!}
-                    </div>
-
                 </div>
                 <!-- /.col -->
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="name">{{ trans('category.home_description') }} (description in homepage)</label>
-                        <span class="required">*</span>
-                        {!!Form::text('home_description', null,array('class' => 'form-control formwidth', 'autocomplete' => 'off')) !!}
-                    </div>
-                    <div class="form-group">
                         <label for="name">{{ trans('category.description') }}</label>
                         <span class="required">*</span>
-                        {!!Form::textarea('description',null, array('rows'=>7,'id'=>'description','class' => 'form-control formwidth', 'autocomplete' => 'off')) !!}
+                        {!!Form::text('description', null,array('class' => 'form-control formwidth', 'autocomplete' => 'off')) !!}
                         {{--<textarea id="description" name="description" rows="7" class="form-control"--}}
                                   {{--placeholder="Write your message.."></textarea>--}}
                     </div>
@@ -89,9 +58,4 @@
         {!! Form::close() !!}
     </div>
     <!-- /.row -->
-    <script type="text/javascript">
-        $(document).ready(function () {
-            CKEDITOR.replace("description")
-        });
-    </script>
 @endsection

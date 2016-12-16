@@ -210,6 +210,7 @@ return [
         'Datatables' => yajra\Datatables\Datatables::class,
         'Input' => Illuminate\Support\Facades\Input::class,
         'Image'      => Intervention\Image\Facades\Image::class,
+        'Helper' => App\Helpers\ConvertString::class,
 
     ],
 

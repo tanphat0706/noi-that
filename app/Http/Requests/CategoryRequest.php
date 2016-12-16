@@ -28,8 +28,6 @@ class CategoryRequest extends Request {
         return [
             //
             'name' => 'required',
-            'short_description' => 'required',
-            'description' => 'required',
             'image' => 'required',
         ];
     }
