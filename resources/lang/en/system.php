@@ -7,7 +7,8 @@ return [
      * |--------------------------------------------------------------------------
      * |
      */
-    'app_name'         => 'Demo Site',
+    'app_name'         => 'Nội Thất Giá Rẻ Thành Tài',
+    'slogan'           => 'MANG VẺ ĐẸP CHO KHÔNG GIAN BẠN',
     'home'             => 'Home',
     'admin'            => 'Admin',
     'add'              => 'Add',

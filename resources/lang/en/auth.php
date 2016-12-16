@@ -27,5 +27,4 @@ return [
     'failed_login_message' => 'Incorrect username or password',
     'email' => 'E-Mail Address',
     'send_reset_link' => 'Send Password Reset Link'
-]
-    ;
+];

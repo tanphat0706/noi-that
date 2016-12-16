@@ -5,9 +5,9 @@
                 <div class="row">
                     <div class="span12">
                         <div id="owl-demo" class="owl-carousel">
-                            <div class="item"><img src="images/slide1.jpg" alt="The Last of us"></div>
-                            <div class="item"><img src="images/slide2.jpg" alt="GTA V"></div>
-                            <div class="item"><img src="images/slide3.jpg" alt="Mirror Edge"></div>
+                            <div class="item"><img src="images/loi.jpg" alt=""></div>
+                            <div class="item"><img src="images/slide2.jpg" alt=""></div>
+                            <div class="item"><img src="images/slide3.jpg" alt=""></div>
                         </div>
                     </div>
                 </div>
@@ -15,9 +15,9 @@
             <div class="storekit-product-category-widget row content-vertical-massive" id="layers-widget-product-categories-1">
                 <div class="container">
                     <div class="section-title medium text-center clearfix">
-                        <h3 class="heading">Product Categories</h3>
+                        <h3 class="heading">{{trans('category.product_cate')}}</h3>
                         <div class="excerpt">
-                            <p>A quick look at our most popular categories.</p>
+                            <p>Chuyên sản xuất nội thất, văn phòng, nhà ở, chung cư, tủ quần áo, bàn trang điểm, bếp,...</p><p><b>Đặc biệt:</b> Gia công theo bản vẽ, thiết kế sản phẩm nội thất theo đơn đặc hàng.</p>
                         </div>
                     </div>
                 </div>
@@ -153,9 +153,10 @@
             <div class="storekit-product-list-widget widget row content-vertical-massive  " id="layers-widget-product-1">
                 <div class="container clearfix">
                     <div class="section-title clearfix medium text-center ">
-                        <h3 class="heading">Best Sellers</h3>
-                        <div class="excerpt"
-                            <p>A quick look at our best sellers this week.</p>
+                        <h3 class="heading">{{trans('product.promotion_product')}}</h3>
+                        <div class="excerpt">
+                            <p>Những sản phẩm ưu đãi sẽ được giảm giá nhiều hơn khi sử dụng kèm dịch vụ của chúng tôi.</p>
+
                         </div>
                     </div>
                 </div>

@@ -16,7 +16,6 @@
                             <th>{{ trans('category.name') }}</th>
                             {{--<th>{{ trans('category.image_url') }}</th>--}}
                             <th style="width:450px;">{{ trans('category.description') }}</th>
-                            <th>{{ trans('category.status') }}</th>
                             <th>{{ trans('category.created_at') }}</th>
                             <th>#</th>
                         </tr>
@@ -49,7 +48,6 @@
     {data: 'name', name: 'categories.name'},
     {{--{data: 'image_url', name: 'categories.image_url'},--}}
     {data: 'description', name: 'categories.description'},
-    {data: 'status', name: 'categories.status', className: 'text-center'},
     {data: 'created_at', name: 'categories.created_at'},
     {data: 'action', name: 'action', orderable: false, searchable:false} ],
 

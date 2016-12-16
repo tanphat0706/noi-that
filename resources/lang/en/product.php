@@ -7,6 +7,7 @@ return [
      * |--------------------------------------------------------------------------
      * |
      */
+    'promotion_product' => 'Sản phẩm ưu đãi',
     'add' => 'Add Product',
     'title' => 'Title',
     'choose_property' => 'Choose Property',
