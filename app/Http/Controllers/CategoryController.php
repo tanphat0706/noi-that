@@ -105,15 +105,14 @@ class CategoryController extends Controller
         $cate = $request->all();
         $time = time();
         $trimSpace = str_replace(" ", "_", strtolower($cate['name']));
-//        $img_type = $request->file('image')->getClientOriginalExtension();
-        dd($request->file('image'));
+        $img_type = $request->file('image')->getClientOriginalExtension();
         $image = \Image::make($request->file('image')->getRealPath());
         $imageName = "img_" . $trimSpace . "_" . $time;
 
-        $image->fit(1220, 858)->save(public_path('images/cate_1220_858/'. $imageName . $img_type));
-        $image->fit(1024, 720)->save(public_path('images/cate_1024_720/'. $imageName . $img_type));
-        $image->fit(768, 540)->save(public_path('images/cate_768_540/'. $imageName . $img_type));
-        $image->fit(300, 211)->save(public_path('images/cate_300_211/'. $imageName . $img_type));
+        $image->fit(1220, 858)->save(public_path('images/cate_1220_858/'. $imageName . '.' .$img_type));
+        $image->fit(1024, 720)->save(public_path('images/cate_1024_720/'. $imageName . '.' . $img_type));
+        $image->fit(768, 540)->save(public_path('images/cate_768_540/'. $imageName . '.' . $img_type));
+        $image->fit(300, 211)->save(public_path('images/cate_300_211/'. $imageName . '.' . $img_type));
         $cate['image'] = $imageName.".".$img_type;
         Categories::create($cate);
         return redirect()->back();
