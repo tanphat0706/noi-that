@@ -12,7 +12,6 @@ class Categories extends Model
         'name',
         'image',
         'description',
-        'short_description',
         'created_at',
         'updated_at',
     ];

@@ -47,6 +47,7 @@
                 @yield('page_title', '') <small>@yield('page_description', '')</small>
             </h1>
         </section>
+
         <!-- Main content -->
         <section class="content">
             <!-- Your Page Content Here -->

@@ -5,10 +5,6 @@
 
 @section('content')
     <!-- left column -->
-    {{--@if($errors)--}}
-        {{--{{dd($errors)}}--}}
-        {{--@endif--}}
-    <!-- general form elements -->
     <div class="box box-primary">
         <!-- form start -->
         {!! Form::open(['route'=>['category-store'], 'method'=> 'POST','files' => true]) !!}
@@ -41,15 +37,9 @@
                 <!-- /.col -->
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="name">{{ trans('category.short_description') }} (description in homepage)</label>
-                        <span class="required">*</span>
-                        {!!Form::text('short_description', null,array('class' => 'form-control formwidth', 'autocomplete' => 'off')) !!}
-                    </div>
-                    <div class="form-group">
                         <label for="name">{{ trans('category.description') }}</label>
                         <span class="required">*</span>
-                        <textarea id="messageArea" name="description" rows="7" class="form-control ckeditor"
-                                  placeholder="Write your message.."></textarea>
+                        {!!Form::text('description', null,array('class' => 'form-control formwidth', 'autocomplete' => 'off')) !!}
                     </div>
                 </div>
                 <!-- /.col -->
@@ -65,12 +55,5 @@
         <!-- /.box -->
         {!! Form::close() !!}
     </div>
-    <script type="text/javascript">
-        CKEDITOR.replace('messageArea',
-                {
-                    customConfig: 'config.js',
-                    toolbar: 'simple'
-                })
-    </script>
     <!-- /.row -->
 @endsection

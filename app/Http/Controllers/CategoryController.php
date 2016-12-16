@@ -11,12 +11,14 @@ use Response;
 use Datatables;
 use Auth;
 use App\Http\Requests;
+use App\Helpers\ConvertString;
 
 class CategoryController extends Controller
 {
     public function __construct(Categories $categories)
     {
         $this->_categories = $categories;
+        parent::__construct();
     }
 
     /**
@@ -31,7 +33,7 @@ class CategoryController extends Controller
         if (! Auth::user()->hasRole('viewCategoryList')) {
             abort('403');
         }
-        $cate = Categories::select('id','name', 'image', 'description', 'short_description','created_at','updated_at');
+        $cate = Categories::select('id','name', 'image', 'description','created_at','updated_at');
         $buttons = array();
         return Datatables::of($cate)
             ->addColumn('action', function ($cate) {
@@ -97,25 +99,21 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CategoryRequest $request)
+    public function store(CategoryRequest $request, ConvertString $convertString)
     {
         if (! Auth::user()->hasRole('addCategory')) {
             abort('403');
         }
         $cate = $request->all();
         $time = time();
-        $trimSpace = str_replace(" ", "_", strtolower($cate['name']));
+        $trimSpace = str_replace(" ", "_", strtolower($convertString->convert_vi_to_en($cate['name'])));
         $img_type = $request->file('image')->getClientOriginalExtension();
         $image = \Image::make($request->file('image')->getRealPath());
         $imageName = "img_" . $trimSpace . "_" . $time;
-
-        $image->fit(1220, 858)->save(public_path('images/cate_1220_858/'. $imageName . '.' .$img_type));
-        $image->fit(1024, 720)->save(public_path('images/cate_1024_720/'. $imageName . '.' . $img_type));
-        $image->fit(768, 540)->save(public_path('images/cate_768_540/'. $imageName . '.' . $img_type));
-        $image->fit(300, 211)->save(public_path('images/cate_300_211/'. $imageName . '.' . $img_type));
+        $image->fit(1024, 720)->save(public_path('images/categories/'. $imageName . '.' . $img_type));
         $cate['image'] = $imageName.".".$img_type;
         Categories::create($cate);
-        return redirect()->back();
+        return redirect()->route('category-list');
     }
 
     /**
@@ -124,88 +122,75 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-//    public function frontentDetail($id)
-//    {
-//        $cate = Categories::find($id);
-//        return view('category.frontend-detail',compact('cate'));
-//    }
-//
-//    /**
-//     * Show the form for editing the specified resource.
-//     *
-//     * @param  int  $id
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function edit($id)
-//    {
-//        if (! Auth::user()->hasRole('editCategory')) {
-//            abort('403');
-//        }
-//        $cate = Categories::find($id);
-//
-//        $listStatus = $this->_categories->createListStatus();
-//
-//        return view('category.edit', compact('cate', 'listStatus'));
-//    }
-//
-//    /**
-//     * Update the specified resource in storage.
-//     *
-//     * @param  \Illuminate\Http\Request  $request
-//     * @param  int  $id
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function update(Request $request, $id)
-//    {
-//        if (! Auth::user()->hasRole('editCategory')) {
-//            abort('403');
-//        }
-//        $cateUpdate = $request->all();
-//        $cate = Categories::find($id);
-//
-//        $cate->name = $cateUpdate['name'];
-//        $time = time();
-//        $trimSpace = str_replace(" ", "_", strtolower($cate['name']));
-//        $imageName = "img_" . $trimSpace . "_" . $time;
-//        if(isset($cateUpdate['image_url'])){
-//            $img_type = $request->file('image_url')->getClientOriginalExtension();
-//            $image = \Image::make($request->file('image_url')->getRealPath());
-//            $image->save(public_path('images/category_img/' . $imageName . "." . $img_type));
-////            $request->file('image_url')->move(base_path() . '/public/images/category_img/', $imageName);
-//            \File::delete(public_path('images/category_img/' . $cate->image_url));
-//            $cate->image_url = $imageName. "." . $img_type;
-//        }elseif(isset($cateUpdate['thumbs_img'])){
-//            $thumbs_type = $request->file('thumbs_img')->getClientOriginalExtension();
-//            $thumbs_img = \Image::make($request->file('thumbs_img')->getRealPath());
-//            $thumbs_img->save(public_path('images/category_img/thumbnail/' . $imageName . "-thumbs." . $thumbs_type));
-//            \File::delete(public_path('images/category_img/thumbnail/' . $cate->thumbs_img));
-//            $cate->thumbs_img = $imageName. "-thumbs." . $thumbs_type;
-//        }
-//        $cate->status = $cateUpdate['status'];
-//        $cate->order_number = $cateUpdate['order_number'];
-//        $cate->description = $cateUpdate['description'];
-//        $cate->home_description = $cateUpdate['home_description'];
-//
-//        $cate->save();
-//        return redirect()->route('category-list');
-//    }
-//
-//    /**
-//     * Remove the specified resource from storage.
-//     *
-//     * @param  int  $id
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function destroy($id)
-//    {
-//        if (! Auth::user()->hasRole('deleteCategory')) {
-//            abort('403');
-//        }
-//        // find result by id and delete
-//        $cate=Categories::find($id);
-//        \File::delete(public_path('images/category_img/' . $cate->image_url));
-//        $cate->delete();
-//        // Redirecting to index() method
-//        return redirect()->route('category-list');
-//    }
+    public function frontentDetail($id)
+    {
+        $cate = Categories::find($id);
+        return view('category.frontend-detail',compact('cate'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        if (! Auth::user()->hasRole('editCategory')) {
+            abort('403');
+        }
+        $cate = Categories::find($id);
+
+        return view('category.edit', compact('cate'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(ConvertString $convertString, Request $request, $id)
+    {
+        if (! Auth::user()->hasRole('editCategory')) {
+            abort('403');
+        }
+        $cateUpdate = $request->all();
+        $cate = Categories::find($id);
+
+        $cate->name = $cateUpdate['name'];
+        $time = time();
+        $trimSpace = str_replace(" ", "_", strtolower($convertString->convert_vi_to_en($cate['name'])));
+        $imageName = "img_" . $trimSpace . "_" . $time;
+        if(isset($cateUpdate['image'])){
+            $img_type = $request->file('image')->getClientOriginalExtension();
+            $image = \Image::make($request->file('image')->getRealPath());
+            $image->fit(1024, 720)->save(public_path('images/categories/'. $imageName . '.' . $img_type));
+            \File::delete(public_path('images/category/' . $cate->image));
+            $cate->image = $imageName. "." . $img_type;
+        }
+        $cate->description = $cateUpdate['description'];
+        $cate->save();
+        return redirect()->route('category-list');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        if (! Auth::user()->hasRole('deleteCategory')) {
+            abort('403');
+        }
+        // find result by id and delete
+        $cate=Categories::find($id);
+        \File::delete(public_path('images/categories/' . $cate->image_url));
+        $cate->delete();
+        // Redirecting to index() method
+        return redirect()->route('category-list');
+    }
 }
