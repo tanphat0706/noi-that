@@ -7,7 +7,7 @@ return [
      * |--------------------------------------------------------------------------
      * |
      */
-
+    'product_cate' => 'Các Sản Phẩm Nổi Bật',
     'add' => 'Add Category',
     'categories'=>'Categories',
     'description' => 'Description',

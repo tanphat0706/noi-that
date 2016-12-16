@@ -4,8 +4,12 @@
                 <div class="grid">
                     <div class="column span-4 ">
                         <aside id="text-3" class="widget widget_text">
-                            <h5 class="section-nav-title">About Crafthouse</h5>
-                            <div class="textwidget">Nulla facilisi. Praesent eget ipsum at neque commodo tincidunt. Fusce velit metus, euismod viverra rutrum at, hendrerit a magna. In et purus molestie, porttitor leo ut, euismod arcu.</div>
+                            <h5 class="section-nav-title">{{trans('system.app_name')}}</h5>
+                            <div class="textwidget">
+                                <p>Chuyên sản xuất nội thất, văn phòng, nhà ở, tủ quần áo, bàn trang điểm, bếp, chung cư, thiết kế tại nhà.</p>
+                                <hr style="color: rgba(255, 255, 255, 0.2);">
+                                <p>150/9A Lê Thị Riêng, Thới An, Quận 12, Hồ Chí Minh</p>
+                            </div>
                         </aside>
                     </div>
                     <div class="column span-4 ">

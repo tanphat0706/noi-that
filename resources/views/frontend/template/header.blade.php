@@ -2,7 +2,7 @@
             <div class="container clearfix">
                 <nav class="pull-left">
                     <ul id="menu-contact-menu" class="nav nav-horizontal">
-                        <li id="menu-item-301" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-301"><a href="#crafthouse/contact/">Queries: +27 21 123 4321</a></li>
+                        <li id="menu-item-301" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-301"><a href="#crafthouse/contact/">{{trans('contact.mobile-phone')}}</a></li>
                         <li id="menu-item-375" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-375"><a href="http://twitter.com"><i class="fa fa-twitter"></i></a></li>
                         <li id="menu-item-379" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-379"><a href="http://facebook.com"><i class="fa fa-facebook"></i></a></li>
                         <li id="menu-item-384" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-384"><a href="http://instagram.com"><i class="fa fa-instagram"></i></a></li>
@@ -53,8 +53,8 @@
                         <a href="#crafthouse/" class="custom-logo-link" rel="home" itemprop="url"><img width="151" height="138" src="images/site-logo.png" class="custom-logo" alt="site-logo" itemprop="logo" srcset="images/site-logo.png 151w, images/site-logo-150x138.png 150w"
                                 sizes="(max-width: 151px) 100vw, 151px"></a>
                         <div class="site-description">
-                            <h3 class="sitename sitetitle"><a href="#crafthouse">CraftHouse</a></h3>
-                            <p class="tagline">WordPress Furniture Theme</p>
+                            <h3 class="sitename sitetitle"><a href="#crafthouse">{{trans('system.app_name')}}</a></h3>
+                            <p class="tagline">{{trans('system.slogan')}}</p>
                         </div>
                     </div>
                 </div>
