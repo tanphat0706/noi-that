@@ -22,6 +22,18 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /*--------------------------------------------------------------*/
 
 @media only screen and (max-width: 480px) {
+    .thumbnails a, .thumbnails a:nth-child(4n+4){
+        width: 15.6% !important;
+    }
+    .fancybox-nav span{
+        visibility: visible !important;
+    }
+    .fancybox-next span{
+        right: -5px !important;
+    }
+    .fancybox-prev span{
+        left: -5px !important;
+    }
     .owl-theme .owl-controls .owl-buttons div {
         font-size: 20px !important;
     }
@@ -280,6 +292,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /*--------------------------------------------------------------*/
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
+    .thumbnails a, .thumbnails a:nth-child(4n+4){
+        width:15.8% !important;
+    }
     /*---------------------------*/
     /*- SPAN - 2 GOES SPAN 4 ----*/
     .span-2 {
@@ -1071,5 +1086,10 @@ screen and (max-width: 600px) {
     /*- BACK TO TOP -------------*/
     #back-to-top {
         display: none;
+    }
+}
+@media only screen and (min-width: 769px) and (max-width: 992px){
+    .thumbnails a, .thumbnails a:nth-child(4n+4){
+        width: 15.9% !important;
     }
 }

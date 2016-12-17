@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Categories;
 use App\Http\Requests;
+use App\Products;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,8 +14,9 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Products $products)
     {
+        $this->_products = $products;
         // $this->middleware('auth');
         parent::__construct();
     }
@@ -27,7 +29,8 @@ class HomeController extends Controller
     public function index()
     {
         $cates = Categories::limit(3)->get();
-        return view('frontend.home', compact('cates'));
+        $product_high = $this->_products->productHigh()->limit(6)->get();
+        return view('frontend.home', compact('cates','product_high'));
     }
 
     public function admin()

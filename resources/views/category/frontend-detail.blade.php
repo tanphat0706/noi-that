@@ -1,202 +1,83 @@
-@extends('frontend.template')
-
+@extends('frontend.template.master')
+@section('title', trans('system.cate'))
 @section('content')
-    <div id="ReassurancePoints" class="hidden-xs">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center top-info">
-                    <div class="row">
-                        <div class="col-sm-6 col-md-4 reassurance-col">
-                            <img src="./images/star.png">
-                            <span>Official Trustpilot score: 9.1 - Excellent!</span>
-                        </div>
-                        <div class="hidden-sm col-md-4 reassurance-col middle-col">
-                            <img src="./images/delivery.png">
-                            <span>£4.99 delivery, free on orders over £75</span>
-                        </div>
-                        <div class="col-sm-6 col-md-4 reassurance-col last-col">
-                            <img src="./images/clock-2.png">
-                            <span>Order &amp; approve by 5pm for next day dispatch</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="title-container layers-parallax" style="background-position: 0% -65px;">
+        <div class="title">
+            <nav class="bread-crumbs">
+                <ul>
+
+                    <li data-key="home"><a href="{{route('frontend')}}">{{trans('system.home')}}</a></li>
+                    <li>/</li>
+
+                    <li data-key="shop_page"><span class="current">{{$current_cate->name}}</span></li>
+                </ul>
+            </nav>
+            <h3 class="heading">{{$current_cate->name}}</h3>
         </div>
     </div>
-    <div class="container hidden-xs breadcrumb no-padding">
-        <div class="row">
-            <div class="col-md-12">
-                <ol class="breadcrumb no-margins hidden-xs" itemscope="" itemtype="http://schema.org/BreadcrumbList">
-                    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-                        <a href="https://www.instantprint.co.uk/" itemprop="item"><i class="fa fa-home"></i>
-                            <span itemprop="name" class="ng-hide">Home</span>
+    <div class="container clearfix content-main">
+        <div class="grid">
+            <div class="column pull-left sidebar span-3">
+                <aside class="well widget woocommerce">
+                    <h5 class="section-nav-title">Search</h5>
+                    <form method="get" action="#">
+                        <input type="text" placeholder="search">
+                    </form>
+                </aside>
+                <aside class="well widget woocommerce widget_product_categories">
+                    <h5 class="section-nav-title">Product Categories</h5>
+                    <ul class="product-categories">
+                        @foreach($cates as $cate)
+                            <li class="cat-item cat-item-9">
+                                <a href="{{route('detail-category',$cate->id)}}">{{$cate->name}}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </aside>
+                <aside id="woocommerce_products-3"
+                       class="content well push-bottom-large widget woocommerce widget_products"><h5
+                            class="section-nav-title">Products</h5>
+                    <ul class="product_list_widget">
+                        @foreach($productsHigh as $highlight)
+                            <li>
+                                <a href="#crafthouse/product/leather-stool/">
+                                    <img width="220" height="220"
+                                         src="{{asset('images/products/'.$highlight->image_1)}}"
+                                         class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image"
+                                         alt="{{$highlight->name}}"
+                                         sizes="(max-width: 220px) 100vw, 220px"> <span
+                                            class="product-title">{{$highlight->name}}</span>
+                                </a>
+                                <span class="woocommerce-Price-amount amount">{{$highlight->price}}</span></li>
+                        @endforeach
+                    </ul>
+                </aside>
+            </div>
+            <div class="column span-9 no-gutter">
+                <ul class="products grid">
+                    @foreach($products as $product)
+                        <li class="product column span-6">
+                        <a href="#">
+                            <div class="img-wrap">
+                                <img width="640" height="440" src="{{asset('images/products/'.$product->image_1)}}" title="Belt-series-Ladder-2-1220x859">
+                            </div> <!--/.wrap-->
+                            <h3>{{$product->name}}</h3>
+                            <span class="price">{{$product->price}} VNĐ</span>
                         </a>
-                        <meta itemprop="position" content="1">
+                        <a href="#" class="button">Xem sản phẩm</a>
                     </li>
-                    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-                        <a href="/booklets" itemprop="item">
-                            <span itemprop="name">Booklets</span>
-                        </a>
-                        <meta itemprop="position" content="2">
-                    </li>
-                </ol>
-
-                <ol class="breadcrumb no-margins visible-xs">
-                    <li><a href="https://www.instantprint.co.uk/"><i class="fa icon-angle-left"></i></a></li>
-                    <li>
-                        Booklets
-                    </li>
-                </ol>
-
+                    @endforeach
+                </ul>
+                {{--<div class="pagination">--}}
+                    {{--<ul class="page-numbers">--}}
+                        {{--<li><span class="page-numbers current">1</span></li>--}}
+                        {{--<li><a class="page-numbers" href="#crafthouse/shop/page/2/">2</a></li>--}}
+                        {{--<li><a class="next page-numbers" href="#crafthouse/shop/page/2/">→</a>--}}
+                        {{--</li>--}}
+                    {{--</ul>--}}
+                {{--</div>--}}
             </div>
-        </div>
 
-    </div>
-    <div class="container no-padding">
-        <div class="container cate-description">
-            <div class="col-xs-12 visible-xs">
-                <img class="img-responsive" src="https://www.instantprint.co.uk/umbraco-media/2968/booklets-2.png">
-            </div>
-            <div class="col-md-12 banner-content no-margins">
-                <h1>Booklet &amp; Brochure Printing</h1>
-                <p>Whether you’re looking to create a magazine, catalogue or programme to showcase your products and
-                    services, our booklets have got you covered. Printed on a range of sizes and paper options, you
-                    don’t have to hold back when making your choice. From durable yet stylish stapled brochures, to
-                    perfect bound booklets, which are printed on and finished with nothing but silk paper. For a
-                    personal touch, don’t forget our sublime Order of Service Booklets.</p>
-            </div>
         </div>
     </div>
-    <div class="container cate-list no-padding">
-        <div class="col-md-9 products no-padding">
-            <div class="row products-row">
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="product-cont">
-                        <div class="bg">
-                            <img alt="" class="img-responsive"
-                                 src="{{asset('images/category_img/thumbnail/img_flyer_&_leaflet_1469345166-thumbs.jpg')}}">
-                            <div class="details">
-                                <div class="product-title col-xs-12 brand-text">A6 Flyer & Leaflet</div>
-                                <div class="cate-price col-xs-12">from 5$</div>
-                                <div class="info"><p>
-                                        Hymenaeos hendrerit egestas, illo, tristique aperiam porta duis iusto
-                                        elit? Modi nam, tincidunt rhoncus diam, quam, parturient curabitur
-                                        occaecati etiam, pariatur lectus Hymenaeos hendrerit egestas
-                                    </p></div>
-                                <div class="btn btn-primary-dark-grey">
-                                    <a href="#booklets/">Buy this product</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="product-cont">
-                        <div class="bg">
-                            <img alt="" class="img-responsive"
-                                 src="{{asset('images/category_img/thumbnail/img_flyer_&_leaflet_1469345166-thumbs.jpg')}}">
-                            <div class="details">
-                                <div class="product-title col-xs-12 brand-text">A6 Flyer & Leaflet</div>
-                                <div class="cate-price col-xs-12">from 5$</div>
-                                <div class="info"><p>
-                                        Hymenaeos hendrerit egestas, illo, tristique aperiam porta duis iusto
-                                        elit? Modi nam, tincidunt rhoncus diam, quam, parturient curabitur
-                                        occaecati etiam, pariatur lectus Hymenaeos hendrerit egestas
-                                    </p></div>
-                                <div class="btn btn-primary-dark-grey">
-                                    <a href="#booklets/">Buy this product</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="product-cont">
-                        <div class="bg">
-                            <img alt="" class="img-responsive"
-                                 src="{{asset('images/category_img/thumbnail/img_flyer_&_leaflet_1469345166-thumbs.jpg')}}">
-                            <div class="details">
-                                <div class="product-title col-xs-12 brand-text">A6 Flyer & Leaflet</div>
-                                <div class="cate-price col-xs-12">from 5$</div>
-                                <div class="info"><p>
-                                        Hymenaeos hendrerit egestas, illo, tristique aperiam porta duis iusto
-                                        elit? Modi nam, tincidunt rhoncus diam, quam, parturient curabitur
-                                        occaecati etiam, pariatur lectus Hymenaeos hendrerit egestas
-                                    </p></div>
-                                <div class="btn btn-primary-dark-grey">
-                                    <a href="#booklets/">Buy this product</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row products-row">
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="product-cont">
-                        <div class="bg">
-                            <img alt="" class="img-responsive"
-                                 src="{{asset('images/category_img/thumbnail/img_flyer_&_leaflet_1469345166-thumbs.jpg')}}">
-                            <div class="details">
-                                <div class="product-title col-xs-12 brand-text">A6 Flyer & Leaflet</div>
-                                <div class="cate-price col-xs-12">from 5$</div>
-                                <div class="info"><p>
-                                        Hymenaeos hendrerit egestas, illo, tristique aperiam porta duis iusto
-                                        elit? Modi nam, tincidunt rhoncus diam, quam, parturient curabitur
-                                        occaecati etiam, pariatur lectus Hymenaeos hendrerit egestas
-                                    </p></div>
-                                <div class="btn btn-primary-dark-grey">
-                                    <a href="#booklets/">Buy this product</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="product-cont">
-                        <div class="bg">
-                            <img alt="" class="img-responsive"
-                                 src="{{asset('images/category_img/thumbnail/img_flyer_&_leaflet_1469345166-thumbs.jpg')}}">
-                            <div class="details">
-                                <div class="product-title col-xs-12 brand-text">A6 Flyer & Leaflet</div>
-                                <div class="cate-price col-xs-12">from 5$</div>
-                                <div class="info"><p>
-                                        Hymenaeos hendrerit egestas, illo, tristique aperiam porta duis iusto
-                                        elit? Modi nam, tincidunt rhoncus diam, quam, parturient curabitur
-                                        occaecati etiam, pariatur lectus Hymenaeos hendrerit egestas
-                                    </p></div>
-                                <div class="btn btn-primary-dark-grey">
-                                    <a href="#booklets/">Buy this product</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="product-cont">
-                        <div class="bg">
-                            <img alt="" class="img-responsive"
-                                 src="{{asset('images/category_img/thumbnail/img_flyer_&_leaflet_1469345166-thumbs.jpg')}}">
-                            <div class="details">
-                                <div class="product-title col-xs-12 brand-text">A6 Flyer & Leaflet</div>
-                                <div class="cate-price col-xs-12">from 5$</div>
-                                <div class="info"><p>
-                                        Hymenaeos hendrerit egestas, illo, tristique aperiam porta duis iusto
-                                        elit? Modi nam, tincidunt rhoncus diam, quam, parturient curabitur
-                                        occaecati etiam, pariatur lectus Hymenaeos hendrerit egestas
-                                    </p></div>
-                                <div class="btn btn-primary-dark-grey">
-                                    <a href="#booklets/">Buy this product</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 banner-right">
-            <img class="img-reponsive" src="{{asset('images/banner-right.png')}}" >
-        </div>
-    </div>
-
 @endsection
