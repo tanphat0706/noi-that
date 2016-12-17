@@ -113,6 +113,7 @@
 <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
 {!! Html::script('plugins/fancybox/jquery.mousewheel-3.0.6.pack.js') !!}
 {!! Html::script('plugins/iCheck/icheck.min.js') !!}
+{!! Html::script('js/jquery.number.js') !!}
 <!-- page script -->
 {!! Html::script('js/main.js') !!}
 {!! Html::script('js/easyResponsiveTabs.js') !!}

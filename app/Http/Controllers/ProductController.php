@@ -43,6 +43,10 @@ class ProductController extends Controller
                 $string = (strlen($product->short_description) > 50) ? substr($product->short_description,0, 50).'...' : $product->short_description;
                 return $string;
             })
+            ->editColumn('price', function($product){
+                $price = number_format($product->price);
+                return $price;
+            })
             ->addColumn('action', function ($product) {
                 $buttons = array();
                 if (Auth::user()->hasRole('editProduct')) {
@@ -113,6 +117,7 @@ class ProductController extends Controller
             abort('403');
         }
         $product = $request->all();
+        $product['price'] = str_replace(',', '', $product['price']);
         $trimSpace = str_replace(" ", "_", strtolower($convertString->convert_vi_to_en($product['name'])));
         for ($i=1;$i<7;$i++){
             if(isset($product['image_'.$i])){
@@ -178,7 +183,8 @@ class ProductController extends Controller
         $product = $request->all();
         $pro_update->name = $product['name'];
         $pro_update->sku = $product['sku'];
-        $pro_update->price = $product['price'];
+//        $pro_update->price = $product['price'];
+        $pro_update->price = str_replace(',', '', $product['price']);
         $pro_update->description = $product['description'];
         $pro_update->short_description = $product['short_description'];
         $pro_update->category_id = $product['category_id'];

@@ -48,7 +48,7 @@
                                          sizes="(max-width: 220px) 100vw, 220px"> <span
                                             class="product-title">{{$highlight->name}}</span>
                                 </a>
-                                <span class="woocommerce-Price-amount amount">{{$highlight->price}}</span></li>
+                                <span class="woocommerce-Price-amount amount">{{number_format($highlight->price)}}</span></li>
                         @endforeach
                     </ul>
                 </aside>
@@ -62,7 +62,7 @@
                                 <img width="640" height="440" src="{{asset('images/products/'.$product->image_1)}}" title="Belt-series-Ladder-2-1220x859">
                             </div> <!--/.wrap-->
                             <h3>{{$product->name}}</h3>
-                            <span class="price">{{$product->price}} VNĐ</span>
+                            <span class="price">{{number_format($product->price)}} VNĐ</span>
                         </a>
                         <a href="#" class="button">Xem sản phẩm</a>
                     </li>

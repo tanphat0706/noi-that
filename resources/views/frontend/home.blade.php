@@ -111,7 +111,7 @@
                                     <header class="article-title">
                                         <h4 class="heading">
                                             <a href="#crafthouse/product/leather-stool/">{{$item->name}}</a></h4>
-                                        <span class="price"><span class="amount">{{$item->price}}</span>
+                                        <span class="price"><span class="amount">{{number_format($item->price)}}</span>
                                         </span>
                                     </header>
                                     <a href="/crafthouse/?add-to-cart=126" class="button product_type_simple">Xem sản phẩm</a>

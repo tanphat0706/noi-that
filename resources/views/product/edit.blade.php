@@ -33,7 +33,7 @@
                     <div class="form-group">
                         <label for="name">{{ trans('product.price') }}</label>
                         <span class="required">*</span>
-                        {!!Form::text('price', null,array('class' => 'form-control formwidth', 'autocomplete' => 'off')) !!}
+                        {!!Form::text('price', null,array('id'=>'price','class' => 'form-control formwidth', 'autocomplete' => 'off')) !!}
                     </div>
                     <div class="form-group">
                         <label for="name">{{ trans('product.short_description') }}</label>
@@ -163,4 +163,9 @@
         {!! Form::close() !!}
     </div>
     <!-- /.row -->
+    <script>
+        $( document ).ready(function() {
+            $('#price').number( true, 0);
+        })
+    </script>
 @endsection

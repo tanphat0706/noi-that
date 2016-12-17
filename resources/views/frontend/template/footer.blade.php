@@ -35,7 +35,7 @@
                                         <a href="{{route('detail-product',$item_high->id)}}" title="{{$item_high->name}}">
                                             <img width="220" height="220" src="{{asset('images/products/'.$item_high->image_1)}}" alt="{{$item_high->name}}"  sizes="(max-width: 220px) 100vw, 220px"> <span class="product-title">{{$item_high->name}}</span>
                                         </a>
-                                        <span class="amount">{{$item_high->price}}</span>
+                                        <span class="amount">{{number_format($item_high->price)}}</span>
                                     </li>
                                 @endforeach
 
