@@ -192,8 +192,15 @@ class CategoryController extends Controller
         }
         // find result by id and delete
         $cate=Categories::find($id);
-        \File::delete(public_path('images/categories/' . $cate->image_url));
-        $cate->delete();
+        $check = $this->_categories->productOfCate($id);
+        if(count($check)>0){
+            \Session::set('error','Danh mục hiện đang có sản phẩm, vui lòng xoá sản phẩm trước');
+//            $a = \Session::get('error');
+//            dd($a);
+        }else{
+            \File::delete(public_path('images/categories/' . $cate->image_url));
+            $cate->delete();
+        }
         // Redirecting to index() method
         return redirect()->route('category-list');
     }

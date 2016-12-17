@@ -47,7 +47,7 @@
                         <div class="column purchase-options-container span-6">
                             <h1 itemprop="name" class="product_title entry-title">{{$product->name}}</h1>
                             <div itemprop="offers">
-                                <p class="price"><span class="amount">{{$product->price}}</span></p>
+                                <p class="price"><span class="amount">{{number_format($product->price)}}</span></p>
                             </div>
                             <div itemprop="description">
                                 <p>{{$product->short_description}}</p>
@@ -115,7 +115,7 @@
                                                         </a>
                                                     </h4>
                                                     <span class="price">
-                                                        <span class="amount">{{$item_related->price}}</span>
+                                                        <span class="amount">{{number_format($item_related->price)}}</span>
                                                     </span>
                                                 </header>
                                                 <a href="/crafthouse/?add-to-cart=126" class="button product_type_simple">Xem sản phẩm</a>
