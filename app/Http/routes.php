@@ -14,13 +14,7 @@
 Route::get('/', function () {
     return view('frontend.home');
 });
-Route::match([
-    'get',
-    'post'
-], '/', [
-    'as' => 'frontend',
-    'uses' => 'HomeController@index'
-]);
+
 Route::get('/login', [
     'as' => 'login',
     'uses' => 'Auth\AuthController@getLogin'
@@ -33,6 +27,33 @@ Route::post('/login', [
 
 Route::get('/home', 'HomeController@index');
 
+/*
+ * FRONTEND ROUTES
+ */
+Route::group([
+    'middleware' => [
+        'web'
+    ]
+], function () {
+    Route::match([
+        'get',
+        'post'
+    ], '/', [
+        'as' => 'frontend',
+        'uses' => 'HomeController@index'
+    ]);
+    Route::get('/category/{id}', [
+        'as' => 'detail-category',
+        'uses' => 'CategoryController@frontentDetail'
+    ]);
+    Route::get('/product/{id}', [
+        'as' => 'detail-product',
+        'uses' => 'ProductController@frontentDetail'
+    ]);
+});
+/*
+ * BACKEND ROUTES
+ */
 Route::group([
     'middleware' => ['web'],
     'prefix' => 'admin'
@@ -184,6 +205,47 @@ Route::group([
             Route::delete('/delete/{id}', [
                 'as' => 'category-del',
                 'uses' => 'CategoryController@destroy'
+            ]);
+        });
+        /**
+         * Product router
+         *
+         * @author Phat Le
+         */
+        Route::group([
+            'prefix' => 'product'
+        ], function () {
+            Route::get('/list', [
+                'as' => 'product-list',
+                'uses' => 'ProductController@index'
+            ]);
+            // Ajax for datatables
+            Route::get('/getProductsJson', [
+                'as' => 'json-products-list',
+                'uses' => 'ProductController@getProductsJson'
+            ]);
+            Route::get('/create', [
+                'as' => 'product-create',
+                'uses' => 'ProductController@create'
+            ]);
+            Route::post('/store', [
+                'as' => 'product-store',
+                'uses' => 'ProductController@store'
+            ]);
+
+            Route::get('/edit/{id}', [
+                'as' => 'product-edit',
+                'uses' => 'ProductController@edit'
+            ]);
+
+            Route::put('/update/{id}', [
+                'as' => 'product-update',
+                'uses' => 'ProductController@update'
+            ]);
+
+            Route::delete('/delete/{id}', [
+                'as' => 'product-del',
+                'uses' => 'ProductController@destroy'
             ]);
         });
     });

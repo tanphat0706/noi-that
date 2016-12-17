@@ -21,7 +21,7 @@
     {!! Html::style('plugins/datatables/extensions/Responsive/css/dataTables.responsive.css') !!}
     {!! Html::style('plugins/datatables/extensions/ColVis/css/dataTables.colVis.min.css') !!}
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
-    {!! Html::style('css/style.css') !!}
+    {!! Html::style('css/style_backend.css') !!}
     <!-- iCheck -->
     {!! Html::style('plugins/iCheck/square/blue.css') !!}
     <!-- jQuery 2.2.3 -->

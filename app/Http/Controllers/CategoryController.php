@@ -5,6 +5,7 @@
 namespace App\Http\Controllers;
 
 use App\Categories;
+use App\Products;
 use App\Http\Requests\CategoryRequest;
 use Illuminate\Http\Request;
 use Response;
@@ -124,8 +125,11 @@ class CategoryController extends Controller
      */
     public function frontentDetail($id)
     {
-        $cate = Categories::find($id);
-        return view('category.frontend-detail',compact('cate'));
+        $cates = Categories::all();
+        $current_cate = Categories::find($id);
+        $products = $this->_categories->productOfCate($id);
+        $productsHigh = $this->_categories->productHighOfCate($id);
+        return view('category.frontend-detail',compact('products','productsHigh','cates','current_cate'));
     }
 
     /**
@@ -167,7 +171,7 @@ class CategoryController extends Controller
             $img_type = $request->file('image')->getClientOriginalExtension();
             $image = \Image::make($request->file('image')->getRealPath());
             $image->fit(1024, 720)->save(public_path('images/categories/'. $imageName . '.' . $img_type));
-            \File::delete(public_path('images/category/' . $cate->image));
+            \File::delete(public_path('images/categories/' . $cate->image));
             $cate->image = $imageName. "." . $img_type;
         }
         $cate->description = $cateUpdate['description'];

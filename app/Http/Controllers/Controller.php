@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Products;
 use View;
 use App\Categories;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -17,7 +18,14 @@ class Controller extends BaseController
     public function __construct()
     {
         // Fetch the Site Settings object
+        $cate = new Categories();
+        $product = new Products();
         $site_menus = Categories::all();
+        $cates_high = Categories::limit(3)->get();
+        $products_high = $product->productHigh()->limit(3)->get();
         View::share('site_menus', $site_menus);
+        View::share('cate_menus', $cate);
+        View::share('cates_high', $cates_high);
+        View::share('products_high', $products_high);
     }
 }

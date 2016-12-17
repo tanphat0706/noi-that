@@ -13,10 +13,14 @@
     <!-- Custom CSS -->
     <link href="{{asset('css/framework.css')}}" rel="stylesheet">
     <link href="{{asset('css/component.css')}}" rel="stylesheet">
+    <link href="{{asset('css/commerce.css')}}" rel="stylesheet">
     <link href="{{asset('css/responsive.css')}}" rel="stylesheet">
     <link href="{{asset('css/layer.css')}}" rel="stylesheet">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <link href="{{asset('css/icon.css')}}" rel="stylesheet">
+    <link href="{{asset('plugins/fancybox/jquery.fancybox.css')}}" rel="stylesheet">
+    <link href="{{asset('plugins/fancybox/helpers/jquery.fancybox-buttons.css')}}" rel="stylesheet">
+    <link href="{{asset('plugins/fancybox/helpers/jquery.fancybox-thumbs.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('font-awesome/css/font-awesome.min.css')}}">
     <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i&amp;subset=vietnamese" rel="stylesheet">
@@ -29,6 +33,7 @@
     <!-- Owl Carousel -->
     <link href="{{asset('plugins/owl-carousel/owl.carousel.css')}}" rel="stylesheet">
     <link href="{{asset('plugins/owl-carousel/owl.theme.css')}}" rel="stylesheet">
+    <script src="{{asset('js/jquery-1.9.1.min.js')}}"></script>
     <style type="text/css" id="layers-inline-styles-header">
         body {
             font-family: "Roboto Condensed", Helvetica, sans-serif;
@@ -68,7 +73,7 @@
     </style>
 </head>
 
-<body class="page-template-builder">
+<body class="page-template-builder" id="{{\Request::route()->getName()}}">
     {{--MOBILE NAV--}}
     @include('frontend/template/mobile-nav')
     <div class="wrapper-site">
@@ -80,7 +85,7 @@
         {{--FOOTER--}}
         @include('frontend/template/footer')
     </div>
-    <script src="{{asset('js/jquery-1.9.1.min.js')}}"></script>
+
     <script src="{{asset('plugins/owl-carousel/owl.carousel.js')}}"></script>
     <script src="{{asset('js/script.js')}}"></script>
     <script>
@@ -102,5 +107,10 @@
             });
         });
     </script>
+    {!! Html::script('plugins/fancybox/jquery.mousewheel-3.0.6.pack.js') !!}
+    {!! Html::script('plugins/fancybox/jquery.fancybox.js') !!}
+    {!! Html::script('plugins/fancybox/helpers/jquery.fancybox-buttons.js') !!}
+    {!! Html::script('plugins/fancybox/helpers/jquery.fancybox-thumbs.js') !!}
+    {!! Html::script('plugins/fancybox/helpers/jquery.fancybox-media.js') !!}
 </body>
 </html>

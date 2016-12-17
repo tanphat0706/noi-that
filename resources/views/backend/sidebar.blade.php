@@ -72,7 +72,36 @@
                     </ul>
                 </li>
             @endif
-            <!-- END SIDEBAR MENU: USER -->
+            <!-- END SIDEBAR MENU: CATEGORY -->
+            <!-- SIDEBAR MENU: PRODUCT -->
+            @if (Auth::user()->hasRole('viewProductList') || Auth::user()->hasRole('addProduct'))
+                <li class="treeview {{ (Route::is('product-list') ? ' active' : '') }} {{ (Route::is('product-create') ? ' active' : '') }}">
+                    <a href="#">
+                        <i class="fa fa-picture-o"></i>
+                        <span>{{ trans('product.products') }}</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        @if (Auth::user()->hasRole('viewProductList'))
+                            <li {{ (Route::is('product-list') ? 'class  =active' : '') }}>
+                                <a href="{{ route('product-list') }}">
+                                    <i class="fa fa-circle-o"></i> {{ trans('product.list') }}
+                                </a>
+                            </li>
+                        @endif
+                        @if (Auth::user()->hasRole('addProduct'))
+                            <li {{ (Route::is('product-create') ? 'class  =active' : '') }}>
+                                <a href="{{ route('product-create') }}">
+                                    <i class="fa fa-circle-o"></i> {{ trans('product.add') }}
+                                </a>
+                            </li>
+                        @endif
+                    </ul>
+                </li>
+        @endif
+        <!-- END SIDEBAR MENU: PRODUCT -->
         </ul>
     </section>
     <!-- /.sidebar -->
