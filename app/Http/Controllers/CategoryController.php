@@ -108,11 +108,13 @@ class CategoryController extends Controller
         $cate = $request->all();
         $time = time();
         $trimSpace = str_replace(" ", "_", strtolower($convertString->convert_vi_to_en($cate['name'])));
+        $alias = str_replace(" ", "-", strtolower($convertString->convert_vi_to_en($cate['name'])));
         $img_type = $request->file('image')->getClientOriginalExtension();
         $image = \Image::make($request->file('image')->getRealPath());
         $imageName = "img_" . $trimSpace . "_" . $time;
         $image->fit(1024, 720)->save(public_path('images/categories/'. $imageName . '.' . $img_type));
         $cate['image'] = $imageName.".".$img_type;
+        $cate['alias'] = $alias;
         Categories::create($cate);
         return redirect()->route('category-list');
     }
@@ -123,14 +125,14 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function frontentDetail($id)
-    {
-        $cates = Categories::all();
-        $current_cate = Categories::find($id);
-        $products = $this->_categories->productOfCate($id);
-        $productsHigh = $this->_categories->productHighOfCate($id);
-        return view('category.frontend-detail',compact('products','productsHigh','cates','current_cate'));
-    }
+//    public function frontentDetail($alias)
+//    {
+//        $cates = Categories::all();
+//        $current_cate = Categories::where('alias',$alias)->get()->first();
+//        $products = $this->_categories->productOfCate($current_cate->id);
+//        $productsHigh = $this->_categories->productHighOfCate($current_cate->id);
+//        return view('category.frontend-detail',compact('products','productsHigh','cates','current_cate'));
+//    }
 
     /**
      * Show the form for editing the specified resource.
@@ -165,7 +167,8 @@ class CategoryController extends Controller
 
         $cate->name = $cateUpdate['name'];
         $time = time();
-        $trimSpace = str_replace(" ", "_", strtolower($convertString->convert_vi_to_en($cate['name'])));
+        $trimSpace = str_replace(" ", "_", strtolower($convertString->convert_vi_to_en($cateUpdate['name'])));
+        $alias = str_replace(" ", "-", strtolower($convertString->convert_vi_to_en($cateUpdate['name'])));
         $imageName = "img_" . $trimSpace . "_" . $time;
         if(isset($cateUpdate['image'])){
             $img_type = $request->file('image')->getClientOriginalExtension();
@@ -174,6 +177,7 @@ class CategoryController extends Controller
             \File::delete(public_path('images/categories/' . $cate->image));
             $cate->image = $imageName. "." . $img_type;
         }
+        $cate->alias = $alias;
         $cate->description = $cateUpdate['description'];
         $cate->save();
         return redirect()->route('category-list');

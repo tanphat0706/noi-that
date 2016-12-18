@@ -27,6 +27,18 @@ Route::post('/login', [
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/gioi-thieu', [
+    'as' => 'about',
+    'uses' => 'HomeController@about'
+]);
+Route::get('/lien-he', [
+    'as' => 'contact',
+    'uses' => 'HomeController@contact'
+]);
+Route::get('/404', [
+    'as' => '404',
+    'uses' => 'HomeController@notfound'
+]);
 /*
  * FRONTEND ROUTES
  */
@@ -42,11 +54,15 @@ Route::group([
         'as' => 'frontend',
         'uses' => 'HomeController@index'
     ]);
-    Route::get('/category/{id}', [
-        'as' => 'detail-category',
-        'uses' => 'CategoryController@frontentDetail'
+    Route::get('/search', [
+        'as' => 'search',
+        'uses' => 'QueryController@search'
     ]);
-    Route::get('/product/{id}', [
+    Route::get('/{cate_alias}', [
+        'as' => 'detail-category',
+            'uses' => 'CategoryController@frontentDetail'
+    ]);
+    Route::get('/{cate_alias}/{alias}', [
         'as' => 'detail-product',
         'uses' => 'ProductController@frontentDetail'
     ]);
@@ -76,7 +92,7 @@ Route::group([
         Route::group([
             'prefix' => 'user'
         ], function () {
-            Route::get('/', [
+            Route::get('/list', [
                 'as' => 'users-list',
                 'uses' => 'UserController@index'
             ]);
@@ -129,7 +145,7 @@ Route::group([
         Route::group([
             'prefix' => 'user-group'
         ], function () {
-            Route::get('/', [
+            Route::get('/list', [
                 'as' => 'user-group-list',
                 'uses' => 'UserGroupController@index'
             ]);

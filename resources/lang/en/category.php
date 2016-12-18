@@ -10,6 +10,7 @@ return [
     'product_cate' => 'Các Sản Phẩm Nổi Bật',
     'add' => 'Add Category',
     'categories'=>'Categories',
+    'category'=>'Danh mục sản phẩm',
     'description' => 'Description',
     'order_number' => 'Order number',
     'image_url' => 'Image',

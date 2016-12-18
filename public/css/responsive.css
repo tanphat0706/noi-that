@@ -383,7 +383,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /*--------------------------------------------------------------*/
 
 @media only screen and (max-width: 768px) {
-    /*---------------------------*/
+    .pc-display{
+        display: none;
+    }
+        /*---------------------------*/
     /*- MASONRY -----------------*/
     .container.list-masonry {
         padding: 0 10px;
@@ -1087,9 +1090,18 @@ screen and (max-width: 600px) {
     #back-to-top {
         display: none;
     }
+    .entry-title{
+        font-size: 2.4rem !important;
+    }
+    .title-container .heading{
+        font-size: 3rem !important;
+    }
 }
 @media only screen and (min-width: 769px) and (max-width: 992px){
     .thumbnails a, .thumbnails a:nth-child(4n+4){
         width: 15.9% !important;
+    }
+    .header-site .nav-horizontal>ul>li>a{
+        padding: 0 5px;
     }
 }

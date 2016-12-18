@@ -56,7 +56,7 @@ class UserGroupController extends Controller
             $buttons = array();
             if (Auth::user()->hasRole('editUserGroup')) {
                 $buttons[] = [
-                    'href' => 'user-group/edit/' . e($userGroup->id),
+                    'href' => 'edit/' . e($userGroup->id),
                     'icon' => 'edit',
                     'type' => 'primary',
                     'label' => trans('system.edit')

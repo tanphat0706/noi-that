@@ -31,7 +31,7 @@ return [
     'edited_profile' => 'Updated your profile successful',
     'not_delete_yourself' => 'Can not delete yourself',
     'not_delete_admin_group' => 'Can not delete Admin group',
-    'not_delete_supper_admin' => 'Can not delete Supper Admin',
+    'not_delete_super_admin' => 'Can not delete Super Admin',
     'not_disable_supper_admin' => 'Can not disable Supper Admin',
     'confirm_delete' => 'Do you want to delete this user ?',
     'is_customer' => 'Is customer',

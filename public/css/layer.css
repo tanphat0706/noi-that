@@ -44,7 +44,13 @@
 @media only screen and (max-width: 480px) {
 	.header-site .logo {
 		display: block;
-		max-width: 80%;
+		max-width: 100%;
+	}
+	.sitename{
+		font-size: 1.5rem;
+	}
+	.tagline{
+		font-size: 1.3rem !important;
 	}
 	.layers-logo-massive .site-logo-link+.site-description,
 	.layers-logo-large .site-logo-link+.site-description,

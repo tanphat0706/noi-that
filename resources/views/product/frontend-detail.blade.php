@@ -1,5 +1,5 @@
 @extends('frontend.template.master')
-@section('title', trans('system.product'))
+@section('title', $product->name)
 @section('content')
     <div class="title-container layers-parallax" style="background-position: 0% -65px;">
         <div class="title">
@@ -7,7 +7,7 @@
                 <ul>
                     <li><a href="{{route('frontend')}}">{{trans('system.home')}}</a></li>
                     <li>/</li>
-                    <li><a href="{{route('detail-category',$cate->id)}}">{{$cate->name}}</a></li>
+                    <li><a href="{{route('detail-category',$cate->alias)}}">{{$cate->name}}</a></li>
                     <li>/</li>
                     <li><span class="current">{{$product->name}}</span></li>
                 </ul>
@@ -47,7 +47,7 @@
                         <div class="column purchase-options-container span-6">
                             <h1 itemprop="name" class="product_title entry-title">{{$product->name}}</h1>
                             <div itemprop="offers">
-                                <p class="price"><span class="amount">{{number_format($product->price)}}</span></p>
+                                <p class="price"><span class="amount">{{number_format($product->price)}} VNĐ</span></p>
                             </div>
                             <div itemprop="description">
                                 <p>{{$product->short_description}}</p>
@@ -58,7 +58,7 @@
                                     <span class="sku" itemprop="sku">{{$product->sku}}</span>
                                 </span><br>
                                 <span class="posted_in">{{trans('category.category')}}:
-                                    <a href="{{route('detail-category',$product->category_id)}}">
+                                    <a href="{{route('detail-category',$cate->getCateAlias($product->category_id)->alias)}}">
                                         {{$cate->name}}
                                     </a>
                                 </span>
@@ -103,22 +103,22 @@
                                 @foreach($related as $item_related)
                                     <article class="layers-masonry-column thumbnail column span-4 " data-cols="3">
                                         <div class="thumbnail-media ">
-                                            <a href="{{route('detail-product',$item_related->id)}}">
+                                            <a href="{{route('detail-product',[$cate->getCateAlias($item_related->category_id)->alias,$item_related->alias])}}">
                                                 <img width="480" height="480" src="{{asset('images/products/'.$item_related->image_1)}}" alt="{{$item_related->name}}" title="{{$item_related->name}}" sizes="(max-width: 480px) 100vw, 480px"> </a>
                                         </div>
                                         <div class="thumbnail-body">
                                             <div class="overlay">
                                                 <header class="article-title">
                                                     <h4 class="heading">
-                                                        <a href="{{route('detail-product',$item_related->id)}}">
+                                                        <a href="{{route('detail-product',[$cate->getCateAlias($item_related->category_id)->alias,$item_related->alias])}}">
                                                             {{$item_related->name}}
                                                         </a>
                                                     </h4>
                                                     <span class="price">
-                                                        <span class="amount">{{number_format($item_related->price)}}</span>
+                                                        <span class="amount">{{number_format($item_related->price)}} VNĐ</span>
                                                     </span>
                                                 </header>
-                                                <a href="/crafthouse/?add-to-cart=126" class="button product_type_simple">Xem sản phẩm</a>
+                                                <a href="{{route('detail-product',[$cate->getCateAlias($item_related->category_id)->alias,$item_related->alias])}}" class="button product_type_simple">Xem sản phẩm</a>
                                             </div>
                                         </div>
                                     </article>
