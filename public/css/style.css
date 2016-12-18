@@ -22,7 +22,7 @@ body {
 }
 
 .sidebar .widget {
-    margin-bottom: 60px !important;
+    margin-bottom: 30px !important;
     padding: 0;
     background: transparent;
     word-wrap: break-word;
@@ -1319,4 +1319,15 @@ div[itemprop="description"] {
 }
 .tabcontent h2{
     font-size: 2.2rem;
+}
+.sub-menu2 li a{
+    padding: 8px 25px;
+}
+/*ABout*/
+#layers-widget-slide-10-903 {
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    background-image: url('../images/slider-corner-table.jpg');
 }

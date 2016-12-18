@@ -64,7 +64,7 @@ class UserController extends Controller
                 $buttons = array();
                 if (Auth::user()->hasRole('editUser')) {
                     $buttons[] = [
-                        'href' => 'user/edit/' . e($user->userId),
+                        'href' => 'edit/' . e($user->userId),
                         'icon' => 'edit',
                         'type' => 'primary',
                         'label' => trans('system.edit')
@@ -174,16 +174,16 @@ class UserController extends Controller
             abort('403');
         }
 
-        if (Auth::id() != $id) {
+        if (Auth::id() != $id && $id != 1) {
             $result = $this->userServices->destroyUser($id);
         } else {
             $result = null;
-            if ($id == 1 || $id == 2) {
-                Session::flash('error', trans('user.not_delete_supper_admin'));
+            if ($id == 1) {
+                Session::flash('error', trans('user.not_delete_super_admin'));
             } else {
                 Session::flash('error', trans('user.not_delete_yourself'));
             }
-
+            return redirect()->back();
         }
 
         if ($result) {

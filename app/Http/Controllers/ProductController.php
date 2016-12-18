@@ -35,10 +35,13 @@ class ProductController extends Controller
         if (! Auth::user()->hasRole('viewProductList')) {
             abort('403');
         }
-        $product = Products::select('products.id','products.name', 'price', 'products.short_description', 'categories.name as cateName','products.created_at as pro_create','products.updated_at as pro_update')
+        $product = Products::select('products.id','products.name','products.highlight', 'price', 'products.short_description', 'categories.name as cateName','products.created_at as pro_create','products.updated_at as pro_update')
             ->leftJoin('categories', 'categories.id', '=', 'products.category_id');
         $buttons = array();
         return Datatables::of($product)
+            ->editColumn('highlight', function ($product) {
+                return $product->highlight == 1 ? '<i class="fa fa-check text-success"></i>' : '';
+            })
             ->editColumn('short_description', function($product){
                 $string = (strlen($product->short_description) > 50) ? substr($product->short_description,0, 50).'...' : $product->short_description;
                 return $string;
@@ -119,6 +122,7 @@ class ProductController extends Controller
         $product = $request->all();
         $product['price'] = str_replace(',', '', $product['price']);
         $trimSpace = str_replace(" ", "_", strtolower($convertString->convert_vi_to_en($product['name'])));
+        $alias = str_replace(" ", "-", strtolower($convertString->convert_vi_to_en($product['name'])));
         for ($i=1;$i<7;$i++){
             if(isset($product['image_'.$i])){
                 $img_type[$i] = $request->file('image_'.$i)->getClientOriginalExtension();
@@ -128,6 +132,7 @@ class ProductController extends Controller
                 $product['image_'.$i] = $imageName[$i].".".$img_type[$i];
             }
         }
+        $product['alias'] = $alias;
         if(isset($product['highlight'])){
             $product['highlight'] = 1;
         }else{
@@ -143,11 +148,11 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function frontentDetail($id)
+    public function frontentDetail($cate_alias, $pro_alias)
     {
-        $product = Products::find($id);
+        $product = Products::where('alias',$pro_alias)->get()->first();
         $cate = Categories::find($product->category_id);
-        $related = $this->_products->productRelated($id,$product->category_id);
+        $related = $this->_products->productRelated($product->id,$product->category_id);
         return view('product.frontend-detail', compact('product','cate','related'));
     }
 
@@ -194,6 +199,7 @@ class ProductController extends Controller
             $pro_update->highlight = 0;
         }
         $trimSpace = str_replace(" ", "_", strtolower($convertString->convert_vi_to_en($pro_update->name)));
+        $alias = str_replace(" ", "-", strtolower($convertString->convert_vi_to_en($pro_update->name)));
         for ($i=1;$i<7;$i++){
             if(isset($product['image_'.$i])){
 //                dd($pro_update->image_5);
@@ -205,6 +211,7 @@ class ProductController extends Controller
                 $pro_update->$img_fields = $imageName[$i].".".$img_type[$i];
             }
         }
+        $pro_update->alias = $alias;
         $pro_update->save();
         return redirect()->route('product-list');
     }

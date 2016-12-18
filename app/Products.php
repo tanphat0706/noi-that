@@ -10,6 +10,7 @@ class Products extends Model
     protected $table = 'products';
     protected $fillable = [
         'name',
+        'alias',
         'sku',
         'image_1',
         'image_1',
@@ -34,7 +35,7 @@ class Products extends Model
         $products = Products::leftJoin('categories','products.category_id', '=' , 'categories.id')
             ->where('products.category_id',$cate_id)
             ->whereNotIn('products.id',[$id])
-            ->select('products.id','products.name','products.image_1','products.price','products.category_id','products.highlight')
+            ->select('products.alias','products.id','products.name','products.image_1','products.price','products.category_id','products.highlight')
             ->get();
         return $products;
     }

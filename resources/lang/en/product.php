@@ -8,6 +8,8 @@ return [
      * |
      */
     'sku' => 'Mã SKU',
+    'related' => 'Sản phẩm liên quan',
+    'review' => 'Đánh giá',
     'image_1' => 'Hình sản phẩm 1',
     'image_2' => 'Hình sản phẩm 2',
     'image_3' => 'Hình sản phẩm 3',

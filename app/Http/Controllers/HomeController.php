@@ -32,9 +32,20 @@ class HomeController extends Controller
         $product_high = $this->_products->productHigh()->limit(6)->get();
         return view('frontend.home', compact('cates','product_high'));
     }
-
     public function admin()
     {
         return view('admin');
+    }
+    public function about()
+    {
+        return view('frontend.about');
+    }
+    public function contact()
+    {
+        return view('frontend.contact');
+    }
+    public function notfound()
+    {
+        return view('errors.404');
     }
 }
