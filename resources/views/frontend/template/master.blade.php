@@ -73,7 +73,7 @@
     </style>
 </head>
 
-<body class="page-template-builder" @if(\Request::route()->getName()=='detail-category') id="detail-category" @endif>
+<body class="page-template-builder" id="detail-category">
     {{--MOBILE NAV--}}
     @include('frontend/template/mobile-nav')
     <div class="wrapper-site">
