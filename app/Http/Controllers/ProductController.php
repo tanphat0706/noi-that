@@ -35,16 +35,12 @@ class ProductController extends Controller
         if (! Auth::user()->hasRole('viewProductList')) {
             abort('403');
         }
-        $product = Products::select('products.id','products.name','products.highlight', 'price', 'products.short_description', 'categories.name as cateName','products.created_at as pro_create','products.updated_at as pro_update')
+        $product = Products::select('products.id','products.name','products.highlight', 'price', 'categories.name as cateName','products.created_at as pro_create','products.updated_at as pro_update')
             ->leftJoin('categories', 'categories.id', '=', 'products.category_id');
         $buttons = array();
         return Datatables::of($product)
             ->editColumn('highlight', function ($product) {
                 return $product->highlight == 1 ? '<i class="fa fa-check text-success"></i>' : '';
-            })
-            ->editColumn('short_description', function($product){
-                $string = (strlen($product->short_description) > 50) ? substr($product->short_description,0, 50).'...' : $product->short_description;
-                return $string;
             })
             ->editColumn('price', function($product){
                 $price = number_format($product->price);
