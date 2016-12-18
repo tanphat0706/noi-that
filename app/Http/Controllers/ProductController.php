@@ -151,11 +151,20 @@ class ProductController extends Controller
     public function frontentDetail($cate_alias, $pro_alias)
     {
         $product = Products::where('alias',$pro_alias)->get()->first();
+        if($product == null){
+            abort(404);
+        }
         $cate = Categories::find($product->category_id);
         $related = $this->_products->productRelated($product->id,$product->category_id);
         return view('product.frontend-detail', compact('product','cate','related'));
     }
-
+//    public function frontentDetail($id)
+//    {
+//        $product = Products::find($id);
+//        $cate = Categories::find($product->category_id);
+//        $related = $this->_products->productRelated($id,$product->category_id);
+//        return view('product.frontend-detail', compact('product','cate','related'));
+//    }
     /**
      * Show the form for editing the specified resource.
      *

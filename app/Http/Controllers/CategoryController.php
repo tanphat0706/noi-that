@@ -129,18 +129,21 @@ class CategoryController extends Controller
    {
        $cates = Categories::all();
        $current_cate = Categories::where('alias',$alias)->get()->first();
+       if($current_cate == null){
+           abort(404);
+       }
        $products = $this->_categories->productOfCate($current_cate->id);
        $productsHigh = $this->_categories->productHighOfCate($current_cate->id);
        return view('category.frontend-detail',compact('products','productsHigh','cates','current_cate'));
    }
-    // public function frontentDetail($id)
-    // {
-    //     $cates = Categories::all();
-    //     $current_cate = Categories::find($id);
-    //     $products = $this->_categories->productOfCate($id);
-    //     $productsHigh = $this->_categories->productHighOfCate($id);
-    //     return view('category.frontend-detail',compact('products','productsHigh','cates','current_cate'));
-    // }
+//    public function frontentDetail($id)
+//    {
+//        $cates = Categories::all();
+//        $current_cate = Categories::find($id);
+//        $products = $this->_categories->productOfCate($id);
+//        $productsHigh = $this->_categories->productHighOfCate($id);
+//        return view('category.frontend-detail',compact('products','productsHigh','cates','current_cate'));
+//    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -206,8 +209,6 @@ class CategoryController extends Controller
         $check = $this->_categories->productOfCate($id);
         if(count($check)>0){
             \Session::set('error','Danh mục hiện đang có sản phẩm, vui lòng xoá sản phẩm trước');
-//            $a = \Session::get('error');
-//            dd($a);
         }else{
             \File::delete(public_path('images/categories/' . $cate->image_url));
             $cate->delete();
