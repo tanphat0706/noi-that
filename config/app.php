@@ -209,7 +209,7 @@ return [
         'Html'       => Collective\Html\HtmlFacade::class,
         'Datatables' => yajra\Datatables\Datatables::class,
         'Input' => Illuminate\Support\Facades\Input::class,
-        'Image'      => Intervention\Image\Facades\Image::class,
+        'Image' => Intervention\Image\Facades\Image::class,
         'Helper' => App\Helpers\ConvertString::class,
 
     ],

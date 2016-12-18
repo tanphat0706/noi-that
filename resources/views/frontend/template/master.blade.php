@@ -73,7 +73,7 @@
     </style>
 </head>
 
-<body class="page-template-builder" id="{{\Request::route()->getName()}}">
+<body class="page-template-builder">
     {{--MOBILE NAV--}}
     @include('frontend/template/mobile-nav')
     <div class="wrapper-site">
