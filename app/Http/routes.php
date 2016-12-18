@@ -11,62 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.home');
-});
-
-Route::get('/login', [
-    'as' => 'login',
-    'uses' => 'Auth\AuthController@getLogin'
-]);
-Route::post('/login', [
-    'as' => 'login',
-    'uses' => 'Auth\AuthController@postLogin'
-]);
-// Route::auth();
-
-Route::get('/home', 'HomeController@index');
-
-Route::get('/gioi-thieu', [
-    'as' => 'about',
-    'uses' => 'HomeController@about'
-]);
-Route::get('/lien-he', [
-    'as' => 'contact',
-    'uses' => 'HomeController@contact'
-]);
-Route::get('/404', [
-    'as' => '404',
-    'uses' => 'HomeController@notfound'
-]);
-/*
- * FRONTEND ROUTES
- */
-Route::group([
-    'middleware' => [
-        'web'
-    ]
-], function () {
-    Route::match([
-        'get',
-        'post'
-    ], '/', [
-        'as' => 'frontend',
-        'uses' => 'HomeController@index'
-    ]);
-    Route::get('/search', [
-        'as' => 'search',
-        'uses' => 'QueryController@search'
-    ]);
-    Route::get('/{cate_alias}', [
-        'as' => 'detail-category',
-            'uses' => 'CategoryController@frontentDetail'
-    ]);
-    Route::get('/{cate_alias}/{alias}', [
-        'as' => 'detail-product',
-        'uses' => 'ProductController@frontentDetail'
-    ]);
-});
 /*
  * BACKEND ROUTES
  */
@@ -265,4 +209,60 @@ Route::group([
             ]);
         });
     });
+});
+
+/*
+ * FRONTEND ROUTES
+ */
+Route::get('/', function () {
+    return view('frontend.home');
+});
+
+Route::get('/login', [
+    'as' => 'login',
+    'uses' => 'Auth\AuthController@getLogin'
+]);
+Route::post('/login', [
+    'as' => 'login',
+    'uses' => 'Auth\AuthController@postLogin'
+]);
+
+Route::get('/home', 'HomeController@index');
+
+Route::get('/gioi-thieu', [
+    'as' => 'about',
+    'uses' => 'HomeController@about'
+]);
+Route::get('/lien-he', [
+    'as' => 'contact',
+    'uses' => 'HomeController@contact'
+]);
+Route::get('/404', [
+    'as' => '404',
+    'uses' => 'HomeController@notfound'
+]);
+Route::group([
+    'middleware' => [
+        'web'
+    ]
+], function () {
+    Route::match([
+        'get',
+        'post'
+    ], '/', [
+        'as' => 'frontend',
+        'uses' => 'HomeController@index'
+    ]);
+    Route::get('/search', [
+        'as' => 'search',
+        'uses' => 'QueryController@search'
+    ]);
+    Route::get('/{cate_alias}', [
+        'as' => 'detail-category',
+        'uses' => 'CategoryController@frontentDetail'
+    ]);
+    Route::get('/{cate_alias}/{alias}', [
+        'as' => 'detail-product',
+        'uses' => 'ProductController@frontentDetail'
+    ]);
 });
