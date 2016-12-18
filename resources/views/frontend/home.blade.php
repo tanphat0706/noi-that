@@ -130,7 +130,7 @@
                                 <header class="article-title">
                                     <h4 class="heading">
                                         <a href="{{route('detail-product',[$cate->getCateAlias($item->category_id)->alias,$item->alias])}}">{{$item->name}}</a></h4>
-                                    <span class="price"><span class="amount">{{number_format($item->price)}} VNĐ</span>
+                                    <span class="price" style="color:red"><span class="amount">{{number_format($item->price)}} VNĐ</span>
                                         </span>
                                 </header>
                                 <a href="{{route('detail-product',[$cate->getCateAlias($item->category_id)->alias,$item->alias])}}" class="button product_type_simple">Xem
