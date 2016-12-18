@@ -16,7 +16,6 @@
                             <th>{{ trans('product.name') }}</th>
                             <th>Nổi bật</th>
                             <th>{{ trans('product.category') }}</th>
-                            <th width="200px">{{ trans('product.short_description') }}</th>
                             <th>{{ trans('product.price') }}</th>
                             <th>{{ trans('product.created_at') }}</th>
                             <th>{{ trans('product.updated_at') }}</th>
@@ -51,7 +50,6 @@
     {data: 'name', name: 'products.name'},
     {data: 'highlight', name: 'products.highlight'},
     {data: 'cateName', name: 'categories.name'},
-    {data: 'short_description', name: 'products.short_description'},
     {data: 'price', name: 'products.price'},
     {data: 'pro_create', name: 'products.created_at'},
     {data: 'pro_update', name: 'products.updated_at'},
