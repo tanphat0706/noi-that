@@ -29,13 +29,6 @@
                             @foreach($site_menus as $menu)
                                 <li class="menu-item-has-children">
                                     <a href="{{route('detail-category',$menu->alias)}}">{{$menu->name}}</a>
-                                    <ul class="sub-menu">
-                                        @foreach($cate_menus->productOfCateForMenu($menu->id) as $item)
-                                            <li>
-                                                <a href="{{route('detail-product',[$cate_menus->getCateAlias($item->category_id)->alias,$item->alias])}}">{{$item->name}}</a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
                                 </li>
                             @endforeach
                         </ul>
