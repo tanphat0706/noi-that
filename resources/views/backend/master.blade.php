@@ -26,6 +26,7 @@
     {!! Html::style('plugins/iCheck/square/blue.css') !!}
     <!-- jQuery 2.2.3 -->
     {!! Html::script('js/jquery-2.2.3.min.js') !!}
+{!! Html::script('plugins/tinymce/js/tinymce/tinymce.min.js') !!}
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
