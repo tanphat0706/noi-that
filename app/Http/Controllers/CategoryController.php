@@ -125,14 +125,14 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-//    public function frontentDetail($alias)
-//    {
-//        $cates = Categories::all();
-//        $current_cate = Categories::where('alias',$alias)->get()->first();
-//        $products = $this->_categories->productOfCate($current_cate->id);
-//        $productsHigh = $this->_categories->productHighOfCate($current_cate->id);
-//        return view('category.frontend-detail',compact('products','productsHigh','cates','current_cate'));
-//    }
+    public function frontentDetail($alias)
+    {
+        $cates = Categories::all();
+        $current_cate = Categories::where('alias',$alias)->get()->first();
+        $products = $this->_categories->productOfCate($current_cate->id);
+        $productsHigh = $this->_categories->productHighOfCate($current_cate->id);
+        return view('category.frontend-detail',compact('products','productsHigh','cates','current_cate'));
+    }
 
     /**
      * Show the form for editing the specified resource.
