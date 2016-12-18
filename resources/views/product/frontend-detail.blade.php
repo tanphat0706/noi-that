@@ -94,8 +94,8 @@
                         </table>
                     </div>
                 </div>
-                @if(count($related) > 0)
-                    <div class="related products">
+
+                <div class="related products">
                     <h2>{{trans('product.related')}}</h2>
                     <div class="widget" style="margin: 0 -20px;">
                         <div class="products container list-grid">
@@ -128,7 +128,7 @@
 
                     </div>
                 </div>
-                @endif
+
             </div>
 
         </div><!-- /row -->
