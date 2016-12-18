@@ -77,7 +77,7 @@
                     </ul>
                     <div class="panel entry-content tabcontent" id="Description" >
                         <h2>{{trans('product.pro_description')}}</h2>
-                        {{$product->description}}
+                        {!! $product->description !!}
                     </div>
                     <div class="panel entry-content tabcontent" id="Reviews">
 
