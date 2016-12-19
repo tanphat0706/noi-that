@@ -48,7 +48,7 @@ $('#userslist').DataTable({
         {data: 'userName', name: 'users.name'},
         {data: 'email', name: 'users.email'},
         {data: 'groupName', name: 'users_groups.name'},
-        {data: 'created_at', name: 'users.created_at'},
+        {data: 'created_at', name: 'users.created_at', searchable:false},
         {data: 'action', name: 'action', orderable: false, searchable:false} ],
 
      initComplete: function () {

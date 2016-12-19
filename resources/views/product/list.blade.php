@@ -2,7 +2,6 @@
 @section('title', trans('product.list'))
 @section('page_title') {{ trans('product.list') }}
 @stop
-
 @section('content')
     <div class="row">
         <div class="col-xs-12">
@@ -41,27 +40,26 @@
 @endsection
 
 @section('js')
-    $(function() {
-    $('#productlist').DataTable({
-    processing: true,
-    serverSide: true,
-    ajax: '{{ route("json-products-list") }}',
-    columns: [
-    {data: 'name', name: 'products.name'},
-    {data: 'highlight', name: 'products.highlight'},
-    {data: 'cateName', name: 'categories.name'},
-    {data: 'price', name: 'products.price'},
-    {data: 'pro_create', name: 'products.created_at'},
-    {data: 'pro_update', name: 'products.updated_at'},
-    {data: 'action', name: 'action', orderable: false, searchable:false} ],
-
-    initComplete: function () {
-    this.api().columns().every(function () {
-    var column = this;
-    var input = document.createElement("input");
-    $(input).appendTo($(column.footer()).empty()) .on('change', function ()
-    { column.search($(this).val(), false, false, true).draw(); }); }); } });
-    });
+        $(function() {
+        $('#productlist').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: '{{ route("json-products-list") }}',
+        columns: [
+        {data: 'name', name: 'products.name'},
+        {data: 'highlight', name: 'products.highlight'},
+        {data: 'cateName', name: 'categories.name'},
+        {data: 'price', name: 'products.price'},
+        {data: 'pro_create', name: 'products.created_at', searchable:false},
+        {data: 'pro_update', name: 'products.updated_at', searchable:false},
+        {data: 'action', name: 'action', orderable: false, searchable:false} ],
+        initComplete: function () {
+        this.api().columns().every(function () {
+        var column = this;
+        var input = document.createElement("input");
+        $(input).appendTo($(column.footer()).empty()) .on('change', function ()
+        { column.search($(this).val(), false, false, true).draw(); }); }); } });
+        });
 
 
     function confirmDelete(formId)

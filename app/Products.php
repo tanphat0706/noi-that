@@ -22,9 +22,7 @@ class Products extends Model
         'short_description',
         'price',
         'highlight',
-        'category_id',
-        'created_at',
-        'updated_at',
+        'category_id'
     ];
 
     public function productHigh(){
