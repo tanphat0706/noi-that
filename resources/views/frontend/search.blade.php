@@ -5,7 +5,7 @@
         <div class="title">
             <nav class="bread-crumbs">
                 <ul>
-                    <li><a href="{{route('frontend')}}">Home</a></li>
+                    <li><a href="{{route('frontend')}}">{{trans('system.home')}}</a></li>
                     <li>/</li>
                     <li><span class="current">Tìm kiếm</span></li>
                 </ul>
