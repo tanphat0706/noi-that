@@ -29,7 +29,7 @@ class HomeController extends Controller
     public function index()
     {
         $cates = Categories::limit(3)->get();
-        $product_high = $this->_products->productHigh()->limit(15)->get();
+        $product_high = $this->_products->productHigh()->limit(30)->get();
         return view('frontend.home', compact('cates','product_high'));
     }
     public function admin()
