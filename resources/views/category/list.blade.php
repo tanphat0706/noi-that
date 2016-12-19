@@ -48,8 +48,8 @@
     columns: [
     {data: 'name', name: 'categories.name'},
     {data: 'description', name: 'categories.description'},
-    {data: 'created_at', name: 'categories.created_at'},
-    {data: 'updated_at', name: 'categories.updated_at'},
+    {data: 'created_at', name: 'categories.created_at', searchable:false},
+    {data: 'updated_at', name: 'categories.updated_at', searchable:false},
     {data: 'action', name: 'action', orderable: false, searchable:false} ],
 
     initComplete: function () {
