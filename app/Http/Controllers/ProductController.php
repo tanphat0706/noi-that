@@ -237,7 +237,9 @@ class ProductController extends Controller
         for($i=1;$i<7;$i++) {
             $img_fields = 'image_'.$i;
 //            dd($product->$img_fields);
-            \File::delete(public_path('images/products/' . $product->$img_fields));
+            if($product->$img_fields != 'no-image.png'){
+                \File::delete(public_path('images/products/' . $product->$img_fields));
+            }
         }
         $product->delete();
         // Redirecting to index() method
