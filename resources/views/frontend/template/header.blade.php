@@ -27,7 +27,7 @@
                         <a href="javascript:void(0)">{{trans('product.products')}}</a>
                         <ul class="sub-menu">
                             @foreach($site_menus as $menu)
-                                <li class="menu-item-has-children">
+                                <li>
                                     <a href="{{route('detail-category',$menu->alias)}}">{{$menu->name}}</a>
                                 </li>
                             @endforeach
