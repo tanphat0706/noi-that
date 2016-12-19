@@ -18,14 +18,14 @@
         <div class="grid">
             <div class="column pull-left sidebar span-3">
                 <aside class="well widget woocommerce">
-                    <h5 class="section-nav-title">Search</h5>
+                    <h5 class="section-nav-title">{{trans('system.search_result')}}</h5>
                     {!! Form::open(['route'=>['search'], 'method'=> 'GET','class'=>'woocommerce-product-search']) !!}
                         <input name="search" type="search" placeholder="Search Products…" value="" title="Search for:">
                         <input type="hidden" name="post_type" value="product">
                     {!! Form::close() !!}
                 </aside>
                 <aside class="well widget woocommerce widget_product_categories">
-                    <h5 class="section-nav-title">Product Categories</h5>
+                    <h5 class="section-nav-title">{{trans('product.categories')}}</h5>
                     <ul class="product-categories">
                         @foreach($cates as $cate)
                             <li class="cat-item cat-item-9">
@@ -35,7 +35,7 @@
                     </ul>
                 </aside>
                 <aside class="pc-display content well push-bottom-large widget woocommerce widget_products">
-                    <h5 class="section-nav-title">Products</h5>
+                    <h5 class="section-nav-title">{{trans('product.highlight')}}</h5>
                     <ul class="product_list_widget">
                         @foreach($productsHigh as $highlight)
                             <li>

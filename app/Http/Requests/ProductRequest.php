@@ -28,6 +28,7 @@ class ProductRequest extends Request {
         return [
             'name' => 'required',
             'description' => 'required',
+            'image_1' => 'required',
             'short_description' => 'required',
             'price' => 'required',
             'category_id' => 'required',

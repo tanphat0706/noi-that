@@ -18,6 +18,7 @@ return [
     'image_6' => 'Hình sản phẩm 6',
     'products' => 'Sản phẩm',
     'category' => 'Loại sản phẩm',
+    'categories' => 'Danh mục sản phẩm',
     'price' => 'Giá',
     'promotion_product' => 'Sản phẩm ưu đãi',
     'highlight'=>'Sản phẩm nổi bật',
