@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="">
     <title>@yield('title', '') | {{ trans('system.app_name') }}</title>
-    <meta name="description" content="Nội Thất Giá Rẻ Thành Tài">
+    <meta name="description" content="@yield('description', 'Nội Thất Giá Rẻ Thành Tài')">
     <!-- Bootstrap Core CSS -->
     <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
     <!-- Custom CSS -->

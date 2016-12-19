@@ -1,5 +1,6 @@
 @extends('frontend.template.master')
 @section('title', $current_cate->name)
+@section('description', $current_cate->description)
 @section('content')
     <div class="title-container layers-parallax" style="background-position: 0% -65px;">
         <div class="title">
