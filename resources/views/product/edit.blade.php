@@ -13,9 +13,9 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="name">{{ trans('product.sku') }}</label>
+                        <label for="name">{{ trans('product.meta_description') }}</label>
                         <span class="required">*</span>
-                        {!!Form::text('sku', null , array('class' => 'form-control formwidth', 'autocomplete' => 'off')) !!}
+                        {!!Form::text('meta_description', null , array('class' => 'form-control formwidth', 'autocomplete' => 'off')) !!}
                     </div>
                     <div class="form-group">
                         <label for="name">{{ trans('product.name') }}</label>

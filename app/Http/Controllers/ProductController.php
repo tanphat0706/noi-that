@@ -192,7 +192,7 @@ class ProductController extends Controller
         $pro_update = Products::find($id);
         $product = $request->all();
         $pro_update->name = $product['name'];
-        $pro_update->sku = $product['sku'];
+        $pro_update->meta_description = $product['meta_description'];
 //        $pro_update->price = $product['price'];
         $pro_update->price = str_replace(',', '', $product['price']);
         $pro_update->description = $product['description'];
