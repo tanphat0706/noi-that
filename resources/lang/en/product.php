@@ -26,6 +26,7 @@ return [
     'title' => 'Tiêu đề',
     'description' => 'Mô tả',
     'pro_description' => 'Mô tả sản phẩm',
+    'meta_description' => 'Meta description',
     'short_description' => 'Mô tả ngắn',
     'created_at' => 'Được tạo lúc',
     'updated_at' => 'Cập nhật lúc',

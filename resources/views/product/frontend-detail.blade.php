@@ -1,6 +1,6 @@
 @extends('frontend.template.master')
 @section('title', $product->name)
-@section('description', $product->short_description)
+@section('description', $product->meta_description)
 @section('content')
     <div class="title-container layers-parallax" style="background-position: 0% -65px;">
         <div class="title">
@@ -55,9 +55,6 @@
                             </div>
 
                             <div class="product_meta">
-                                <span class="sku_wrapper">SKU:
-                                    <span class="sku" itemprop="sku">{{$product->sku}}</span>
-                                </span><br>
                                 <span class="posted_in">{{trans('category.category')}}:
                                     <a href="{{route('detail-category',$cate->getCateAlias($product->category_id)->alias)}}">
                                         {{$cate->name}}
