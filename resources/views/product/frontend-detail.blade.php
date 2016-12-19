@@ -48,7 +48,15 @@
                         <div class="column purchase-options-container span-6">
                             <h1 itemprop="name" class="product_title entry-title">{{$product->name}}</h1>
                             <div itemprop="offers">
-                                <p class="price"><span class="amount">{{number_format($product->price)}} VNĐ</span></p>
+                                <p class="price">
+                                    <span class="amount">
+                                        @if($product->price > 0)
+                                            {{number_format($product->price)}} VNĐ
+                                        @else
+                                            Giá tại xưởng
+                                        @endif
+                                    </span>
+                                </p>
                             </div>
                             <div itemprop="description">
                                 <p>{{$product->short_description}}</p>
@@ -80,16 +88,7 @@
                     <div class="panel entry-content tabcontent" id="Reviews">
 
                         <h2>{{trans('product.review')}}</h2>
-
-                        <table class="shop_attributes">
-                            <tbody>
-                            <tr class="">
-                                <th>Size</th>
-                                <td><p>Small, Medium, Large</p>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                        <div class="fb-comments" data-href="http://www.noithatgiarethanhtai.com<?=$_SERVER['REQUEST_URI']?>" data-numposts="5" data-width="100%"></div>
                     </div>
                 </div>
 

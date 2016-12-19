@@ -51,7 +51,13 @@
                                          alt="{{$item_high->name}}" sizes="(max-width: 220px) 100vw, 220px"> <span
                                             class="product-title">{{$item_high->name}}</span>
                                 </a>
-                                <span class="amount">{{number_format($item_high->price)}} VNĐ</span>
+                                <span class="amount">
+                                    @if($item_high->price > 0)
+                                        {{number_format($item_high->price)}} VNĐ
+                                    @else
+                                        Giá tại xưởng
+                                    @endif
+                                </span>
                             </li>
                         @endforeach
 

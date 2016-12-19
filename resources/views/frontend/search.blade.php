@@ -42,7 +42,14 @@
                                                             </a>
                                                         </h4>
                                                         <span class="price">
-                                                        <span class="amount">{{number_format($item_search->price)}} VNĐ</span>
+                                                        <span class="amount">
+                                                            @if($item_search->price > 0)
+                                                                {{number_format($item_search->price)}} VNĐ
+                                                            @else
+                                                                Giá tại xưởng
+                                                            @endif
+
+                                                        </span>
                                                     </span>
                                                     </header>
                                                     <a href="{{route('detail-product',[$cate_menus->getCateAlias($item_search->category_id)->alias,$item_search->alias])}}"
