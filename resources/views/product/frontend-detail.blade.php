@@ -117,7 +117,18 @@
                                                         </a>
                                                     </h4>
                                                     <span class="price">
-                                                        <span class="amount">{{number_format($item_related->price)}} VNĐ</span>
+                                                        <span class="amount">
+                                                            @if($item_related->price > 0)
+                                                                @if($item_related->old_price > 0)
+                                                                    <span class="old_price">{{number_format($item_related->old_price)}} VNĐ </span>
+                                                                    {{number_format($item_related->price)}} VNĐ
+                                                                @else
+                                                                    {{number_format($item_related->price)}} VNĐ
+                                                                @endif
+                                                            @else
+                                                                Giá tại xưởng
+                                                            @endif
+                                                        </span>
                                                     </span>
                                                 </header>
                                                 <a href="{{route('detail-product',[$cate->getCateAlias($item_related->category_id)->alias,$item_related->alias])}}" class="button product_type_simple">Xem sản phẩm</a>

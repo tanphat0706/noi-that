@@ -133,7 +133,12 @@
                                     <span class="price" style="color:red">
                                         <span class="amount">
                                             @if($item->price > 0)
-                                                {{number_format($item->price)}} VNĐ
+                                                @if($item->old_price > 0)
+                                                    <span class="old_price">{{number_format($item->old_price)}} VNĐ </span>
+                                                    {{number_format($item->price)}} VNĐ
+                                                @else
+                                                    {{number_format($item->price)}} VNĐ
+                                                @endif
                                             @else
                                                 Giá tại xưởng
                                             @endif
