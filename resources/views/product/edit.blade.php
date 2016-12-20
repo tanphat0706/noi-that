@@ -31,6 +31,11 @@
                 <!-- /.col -->
                 <div class="col-md-6">
                     <div class="form-group">
+                        <label for="name">{{ trans('product.old_price') }}</label>
+                        <span class="required">*</span>
+                        {!!Form::text('old_price', null,array('id'=>'old_price','class' => 'form-control formwidth', 'autocomplete' => 'off')) !!}
+                    </div>
+                    <div class="form-group">
                         <label for="name">{{ trans('product.price') }}</label>
                         <span class="required">*</span>
                         {!!Form::text('price', null,array('id'=>'price','class' => 'form-control formwidth', 'autocomplete' => 'off')) !!}
@@ -166,6 +171,7 @@
     <script>
         $( document ).ready(function() {
             $('#price').number( true, 0);
+            $('#old_price').number( true, 0);
         })
     </script>
     <script type="text/javascript">

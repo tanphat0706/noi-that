@@ -117,6 +117,7 @@ class ProductController extends Controller
         }
         $product = $request->all();
         $product['price'] = str_replace(',', '', $product['price']);
+        $product['old_price'] = str_replace(',', '', $product['old_price']);
         $trimSpace = str_replace(" ", "_", strtolower($convertString->convert_vi_to_en($product['name'])));
         $alias = str_replace(" ", "-", strtolower($convertString->convert_vi_to_en($product['name'])));
         for ($i=1;$i<7;$i++){
@@ -195,6 +196,7 @@ class ProductController extends Controller
         $pro_update->meta_description = $product['meta_description'];
 //        $pro_update->price = $product['price'];
         $pro_update->price = str_replace(',', '', $product['price']);
+        $pro_update->old_price = str_replace(',', '', $product['old_price']);
         $pro_update->description = $product['description'];
         $pro_update->short_description = $product['short_description'];
         $pro_update->category_id = $product['category_id'];

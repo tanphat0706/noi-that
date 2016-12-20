@@ -50,8 +50,13 @@
                             <div itemprop="offers">
                                 <p class="price">
                                     <span class="amount">
-                                        @if($product->price > 0)
-                                            {{number_format($product->price)}} VNĐ
+                                       @if($product->price > 0)
+                                            @if($product->old_price > 0)
+                                                <span class="old_price">{{number_format($product->old_price)}} VNĐ </span>
+                                                {{number_format($product->price)}} VNĐ
+                                            @else
+                                                {{number_format($product->price)}} VNĐ
+                                            @endif
                                         @else
                                             Giá tại xưởng
                                         @endif

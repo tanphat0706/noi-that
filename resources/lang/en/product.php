@@ -20,6 +20,7 @@ return [
     'category' => 'Loại sản phẩm',
     'categories' => 'Danh mục sản phẩm',
     'price' => 'Giá',
+    'old_price' => 'Giá cũ',
     'promotion_product' => 'Sản phẩm ưu đãi',
     'highlight'=>'Sản phẩm nổi bật',
     'add' => 'Tạo sản phẩm',

@@ -1331,3 +1331,8 @@ div[itemprop="description"] {
     background-size: cover;
     background-image: url('../images/slider-corner-table.jpg');
 }
+.old_price{
+    color: #ccc !important;
+    text-decoration: line-through !important;
+    margin-right: 10px;
+}

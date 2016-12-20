@@ -21,6 +21,7 @@ class Products extends Model
         'description',
         'short_description',
         'price',
+        'old_price',
         'highlight',
         'category_id'
     ];
@@ -33,7 +34,7 @@ class Products extends Model
         $products = Products::leftJoin('categories','products.category_id', '=' , 'categories.id')
             ->where('products.category_id',$cate_id)
             ->whereNotIn('products.id',[$id])
-            ->select('products.alias','products.id','products.name','products.image_1','products.price','products.category_id','products.highlight')
+            ->select('products.alias','products.id','products.name','products.image_1','products.price','products.old_price','products.category_id','products.highlight')
             ->get();
         return $products;
     }
