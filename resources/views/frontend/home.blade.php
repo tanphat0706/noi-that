@@ -1,5 +1,5 @@
 @extends('frontend.template.master')
-@section('title', trans('system.home'))
+@section('title', trans('system.app_name'))
 @section('content')
     <div id="demo">
         <div class="row">

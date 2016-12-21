@@ -44,9 +44,9 @@
                          alt="site-logo" itemprop="logo" sizes="(max-width: 151px) 100vw, 151px">
                 </a>
                 <div class="site-description">
-                    <h3 class="sitename sitetitle">
+                    <h1 class="sitename sitetitle">
                         <a href="{{route('frontend')}}">{{trans('system.app_name')}}</a>
-                    </h3>
+                    </h1>
                     <p class="tagline">{{trans('system.slogan')}}</p>
                 </div>
             </div>
