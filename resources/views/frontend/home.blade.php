@@ -1,5 +1,6 @@
 @extends('frontend.template.master')
-@section('title', trans('system.home'))
+@section('title', trans('system.app_name'))
+@section('description', 'NỘI THẤT GIÁ RẺ THÀNH TÀI. Chuyên sản xuất nội thất, văn phòng, nhà ở, chung cư, tủ quần áo, bàn trang điểm, bếp, bàn học,.. tại Thành Phố Hồ Chí Minh.')
 @section('content')
     <div id="demo">
         <div class="row">
