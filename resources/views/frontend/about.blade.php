@@ -1,7 +1,7 @@
 @extends('frontend.template.master')
 @section('title', trans('system.about'))
 @section('content')
-    <div class="swiper-slide row" style="height: 350px; ">
+    <div class="swiper-slide row pc-display" style="height: 350px; ">
         <div style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
             <div class="image-top text-left" id="layers-widget-slide-10-903"
                  style="float: left; height: 350px; width: 1304px;">

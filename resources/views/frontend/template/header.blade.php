@@ -4,17 +4,17 @@
             <ul class="nav nav-horizontal">
                 <li><a href="javascript:void(0)">{{trans('contact.mobile-phone')}}</a></li>
                 <li><a href="http://twitter.com"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="http://facebook.com"><i class="fa fa-facebook"></i></a></li>
+                <li><a target="_blank" href="https://www.facebook.com/N%E1%BB%99i-Th%E1%BA%A5t-Gi%C3%A1-R%E1%BA%BB-Th%C3%A0nh-T%C3%A0i-582066751993923"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="http://instagram.com"><i class="fa fa-instagram"></i></a></li>
             </ul>
         </nav>
-        <nav class="pull-right">
-            <ul class="nav nav-horizontal">
-                <li><a href="javascript:void(0)">Shipping and Returns</a></li>
-                <li><a href="javascript:void(0)">My Account</a></li>
-                <li><a href="javascript:void(0)">Contact</a></li>
-            </ul>
-        </nav>
+        {{--<nav class="pull-right">--}}
+            {{--<ul class="nav nav-horizontal">--}}
+                {{--<li><a href="javascript:void(0)">Shipping and Returns</a></li>--}}
+                {{--<li><a href="javascript:void(0)">My Account</a></li>--}}
+                {{--<li><a href="javascript:void(0)">Contact</a></li>--}}
+            {{--</ul>--}}
+        {{--</nav>--}}
     </div>
 </div>
 <section class="header-site header-inline layers-parallax layers-logo-" style="background-position: 50% -26px;">

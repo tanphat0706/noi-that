@@ -10,21 +10,14 @@
                         <ul class="sub-menu">
                             <li class="menu-item-has-children">
                                 <a href="{{route('detail-category',$menu->alias)}}">{{$menu->name}}</a>
-                                <ul class="sub-menu sub-menu2">
-                                    @foreach($cate_menus->productOfCateForMenu($menu->id) as $item)
-                                        <li>
-                                            <a href="{{route('detail-product',[$cate_menus->getCateAlias($item->category_id)->alias,$item->alias])}}">{{$item->name}}</a>
-                                        </li>
-                                    @endforeach
-                                </ul>
                             </li>
                         </ul>
                     @endforeach
                 </li>
-                <li><a href="#crafthouse/about/">{{trans('system.about')}}</a></li>
+                <li><a href="{{route('about')}}">{{trans('system.about')}}</a></li>
                 <li><a href="#crafthouse/about/">{{trans('system.bang_gia')}}</a></li>
                 <li><a href="#crafthouse/about/">{{trans('system.khuyen_mai')}}</a></li>
-                <li><a href="#crafthouse/about/">{{trans('system.contact')}}</a></li>
+                <li><a href="{{route('contact')}}">{{trans('system.contact')}}</a></li>
             </ul>
         </nav>
     </div>

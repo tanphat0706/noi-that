@@ -1,9 +1,9 @@
 <section class="wrapper-content">
     <div id="woocommerce_product_search-3" class="widget container push-bottom-medium woocommerce widget_product_search">
         {!! Form::open(['route'=>['search'], 'method'=> 'GET','files' => true,'class'=>'woocommerce-product-search']) !!}
-        <label class="screen-reader-text" for="woocommerce-product-search-field">Search for:</label>
-        <input name="search" type="search" id="woocommerce-product-search-field" class="search-field" placeholder="Search Products…" value="" title="Search for:">
-        <input type="submit" value="Search">
+        <label class="screen-reader-text" for="woocommerce-product-search-field">Tìm kiếm:</label>
+        <input name="search" type="search" id="woocommerce-product-search-field" class="search-field" placeholder="Tìm sản phẩm…" value="" title="Search for:">
+        <input type="submit" value="Tìm">
         <input type="hidden" name="post_type" value="product">
         {!! Form::close() !!}
     </div>
