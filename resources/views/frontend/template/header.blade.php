@@ -40,7 +40,7 @@
         <div class="inline-site-logo">
             <div class="logo">
                 <a href="{{route('frontend')}}" class="custom-logo-link" rel="home" itemprop="url">
-                    <img width="151" height="138" src="{{asset('images/site-logo.png')}}" class="custom-logo"
+                    <img width="151" height="138" src="{{asset('images/site-logo-2.png')}}" class="custom-logo"
                          alt="site-logo" itemprop="logo" sizes="(max-width: 151px) 100vw, 151px">
                 </a>
                 <div class="site-description">

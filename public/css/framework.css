@@ -2516,7 +2516,7 @@ table.table-comfortable td {
 .custom-logo-link img,
 .mark img {
 	display: inline-block;
-	max-height: 40px;
+	max-height: 50px;
 	margin: auto;
 	width: auto;
 }
